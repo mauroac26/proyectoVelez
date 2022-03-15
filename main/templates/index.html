@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Club Atletico Velez Sarsfield</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'img/favicon.png' %}" rel="icon">
+  <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Raleway:300,400,400i,500,500i,700,800,900" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: eBusiness - v4.7.0
+  * Template URL: https://bootstrapmade.com/ebusiness-bootstrap-corporate-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex justify-content-between">
+
+      <div class="logo">
+        <h1><a href="index.html">Velez Sarsfield</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">El club</a></li>
+          <li><a class="nav-link scrollto" href="#services">Institucion</a></li>
+          <li><a class="nav-link scrollto" href="#portfolio">Estadicticas</a></li>
+          <li><a class="nav-link scrollto" href="#team">Plantel</a></li>
+          <!-- <li><a href="blog.html">Blog</a></li> -->
+          <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li> -->
+          <!-- <li><a class="nav-link scrollto" href="#contact">Contact</a></li> -->
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container">
+      <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+        <ol id="hero-carousel-indicators" class="carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+
+          <div class="carousel-item active" style="background-image: url(static/img/hero-carousel/estadio.jpg)">
+            <div class="carousel-container">
+              <div class="container">
+                <h2 class="animate__animated animate__fadeInDown">Club Atletico Velez Sarsfield </h2>
+                <p class="animate__animated animate__fadeInUp">El primero en ser un gran club</p>
+                <a href="#about" class="btn-get-started scrollto animate__animated animate__fadeInUp">El club</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item" style="background-image: url(static/img/hero-carousel/2.jpg})">
+            <div class="carousel-container">
+              <div class="container">
+                <h2 class="animate__animated animate__fadeInDown">At vero eos et accusamus</h2>
+                <p class="animate__animated animate__fadeInUp">Helping Business Security & Peace of Mind for Your Family</p>
+                <a href="#about" class="btn-get-started scrollto animate__animated animate__fadeInUp">Get Started</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item" style="background-image: url(static/img/hero-carousel/3.jpg)">
+            <div class="carousel-container">
+              <div class="container">
+                <h2 class="animate__animated animate__fadeInDown">Temporibus autem quibusdam</h2>
+                <p class="animate__animated animate__fadeInUp">Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem</p>
+                <a href="#about" class="btn-get-started scrollto animate__animated animate__fadeInUp">Get Started</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <div id="about" class="about-area area-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="section-headline text-center">
+              <h2>Historia del club</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <!-- single-well start-->
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="well-left">
+              <div class="single-well">
+                <a href="#">
+                  <img src="{% static '/img/about/historia.jpg' %}" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- single-well end-->
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="well-middle">
+              <div class="single-well">
+                <a href="#">
+                  <h4 class="sec-head">Historia</h4>
+                </a>
+                <p>
+                  Redug Lagre dolor sit amet, consectetur adipisicing elit. Itaque quas officiis iure aspernatur sit adipisci quaerat unde at nequeRedug Lagre dolor sit amet, consectetur adipisicing elit. Itaque quas officiis iure
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- End col-->
+        </div>
+      </div>
+    </div><!-- End About Section -->
+
+      
+    <!-- ======= Pricing Section ======= -->
+    <div id="pricing" class="pricing-area area-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="section-headline text-center">
+              <h2>Estadisticas</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <!-- <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="pri_table_list">
+              <h3>basic <br /> <span>$80 / month</span></h3>
+              <ol>
+                <li class="check"><i class="bi bi-check"></i><span>Online system</span></li>
+                <li class="check"><i class="bi bi-x"></i><span>Full access</span></li>
+                <li class="check"><i class="bi bi-check"></i><span>Free apps</span></li>
+                <li class="check"><i class="bi bi-check"></i><span>Multiple slider</span></li>
+                <li class="cross"><i class="bi bi-x"></i><span>Free domin</span></li>
+                <li class="cross"><i class="bi bi-x"></i><span>Support unlimited</span></li>
+                <li class="check"><i class="bi bi-check"></i><span>Payment online</span></li>
+                <li class="check"><i class="bi bi-x"></i><span>Cash back</span></li>
+              </ol>
+              <button>sign up now</button>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="pri_table_list active">
+              <span class="saleon">top sale</span>
+              <h3>standard <br /> <span>$110 / month</span></h3>
+              <ol>
+                <li class="check"><i class="bi bi-check"></i><span>Online system</span></li>
+                <li class="check"><i class="bi bi-check"></i><span>Full access</span></li>
+                <li class="check"><i class="bi bi-check"></i><span>Free apps</span></li>
+                <li class="check"><i class="bi bi-check"></i><span>Multiple slider</span></li>
+                <li class="cross"><i class="bi bi-x"></i><span>Free domin</span></li>
+                <li class="check"><i class="bi bi-check"></i><span>Support unlimited</span></li>
+                <li class="check"><i class="bi bi-check"></i><span>Payment online</span></li>
+                <li class="cross"><i class="bi bi-x"></i><span>Cash back</span></li>
+              </ol>
+              <button>sign up now</button>
+            </div>
+          </div> -->
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="pri_table_list">
+              <h3>premium <br /> <span>$150 / month</span></h3>
+              <ol>
+                <li class="check"><i class="bi bi-check"></i><span>Online system</span></li>
+                <li class="check"><i class="bi bi-check"></i><span>Full access</span></li>
+                <li class="check"><i class="bi bi-check"></i><span>Free apps</span></li>
+                <li class="check"><i class="bi bi-check"></i><span>Multiple slider</span></li>
+                <li class="check"><i class="bi bi-check"></i><span>Free domin</span></li>
+                <li class="check"><i class="bi bi-check"></i><span>Support unlimited</span></li>
+                <li class="check"><i class="bi bi-check"></i><span>Payment online</span></li>
+                <li class="check"><i class="bi bi-check"></i><span>Cash back</span></li>
+              </ol>
+              <button>sign up now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- End Pricing Section -->
+
+
+      <!-- ======= Plantel Section ======= -->
+      <div id="team" class="our-team-area area-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="section-headline text-center">
+              <h2>Plantel</h2>
+            </div>
+          </div>
+        </div>
+    <div id="testimonials" class="testimonials">
+ 
+  
+          <div class="testimonials-slider swiper">
+            <div class="swiper-wrapper">
+              
+              {% for p in title %}
+              
+              {{ i|add:2}}
+              <p>{{i}}</p>
+              <div class="swiper-slide">
+                
+                
+    
+                <div class="testimonial-item">
+                  
+                    <div class="row">
+                    <div class=" col">
+                      <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                        <div class="team-img">
+                          <a href="#">
+                            <img src="{{p.image}}" alt="" width="200" height="200" />
+                          </a>
+                        </div>
+                        <div class="team-content text-center">
+                          <h4>{{p.name}}</h4>
+                          <p>{{p.extensions}}</p>
+                        </div>
+                        </div>
+                      </div>
+                      </div>
+                        </div>
+                        
+                </div>
+                
+              </div>
+              
+              {% endfor %}  
+              
+            </div>
+            
+          </div>
+          
+          <div class="swiper-pagination">
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+      </div><!-- End Testimonials Section -->
+
+      
+
+      
+  </main><!-- End #main -->
+
+    <div class="footer-area-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="copyright text-center">
+              <p>
+                &copy; Copyright <strong>eBusiness</strong>. All Rights Reserved
+              </p>
+            </div>
+            <div class="credits">
+              <!--
+              All the links in the footer should remain intact.
+              You can delete the links only if you purchased the pro version.
+              Licensing information: https://bootstrapmade.com/license/
+              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eBusiness
+            -->
+              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>
