@@ -220,11 +220,81 @@
               <button>sign up now</button>
             </div>
           </div> -->
+        
           <div class="col-md-4 col-sm-4 col-xs-12">
             <div class="pri_table_list">
-              <h3>premium <br /> <span>$150 / month</span></h3>
+              <table class="table table-sm">
+                <thead>
+                  
+                  <th>
+                    Equipo
+                  </th>
+                  <th>
+                    Pts
+                  </th>
+                  <th>
+                    Pj
+                  </th>
+                  <th>
+                    G
+                  </th>
+                  <th>
+                    E
+                  </th>
+                  <th>
+                    P
+                  </th>
+                  <th>
+                    GF
+                  </th>
+                  <th>
+                    GC
+                  </th>
+                  <th>
+                    Dif
+                  </th>
+                </thead>
+                <tbody>
+                
+                  {% for i in equipos %}
+                <tr>
+                  
+                  <td>
+                    {{i.nombre}}
+                  </td>
+                  <td>
+                    {{i.pts}}
+                  </td>
+                  <td>
+                    {{i.pj}}
+                  </td>
+                  <td>
+                    {{i.g}}
+                  </td>
+                  <td>
+                    {{i.e}}
+                  </td>
+                  <td>
+                    {{i.p}}
+                  </td>
+                  <td>
+                    {{i.gf}}
+                  </td>
+                  <td>
+                    {{i.gc}}
+                  </td>
+                  <td>
+                    {{i.dif}}
+                  </td>
+                  
+                </tr>
+               
+                {% endfor %}
+              </tbody>
+              </table>
+              <!-- <h3>premium <br /> <span>$150 / month</span></h3>
               <ol>
-                <li class="check"><i class="bi bi-check"></i><span>Online system</span></li>
+                <li class="check"><span>Online system</span></li>
                 <li class="check"><i class="bi bi-check"></i><span>Full access</span></li>
                 <li class="check"><i class="bi bi-check"></i><span>Free apps</span></li>
                 <li class="check"><i class="bi bi-check"></i><span>Multiple slider</span></li>
@@ -233,7 +303,7 @@
                 <li class="check"><i class="bi bi-check"></i><span>Payment online</span></li>
                 <li class="check"><i class="bi bi-check"></i><span>Cash back</span></li>
               </ol>
-              <button>sign up now</button>
+              <button>sign up now</button> -->
             </div>
           </div>
         </div>

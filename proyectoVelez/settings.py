@@ -25,7 +25,7 @@ SECRET_KEY = 'p!(=f49^qnn#tws218u%fayk4)8zz^c2ulk+)uqrf9m4p))6&a'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'main',
     'requests',
     'django_filters',
+    
 ]
 
 MIDDLEWARE = [
