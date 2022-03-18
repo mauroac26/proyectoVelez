@@ -23,6 +23,18 @@ def get_username(params={}):
     return ''
 
 
+def resultados(params={}):
+    response = generate_request('https://serpapi.com/search.json?engine=google&q=resultados+velez+sarsfield&location=Mexico&google_domain=google.com.mx&gl=mx&hl=es&api_key=380a1822a2d4935cffd76013b3b82740ee1ae43ee801bc0690edf4d5b916c0c5', params)
+    
+    if response:
+
+       fixture = response['sports_results']['games']
+       
+       return fixture
+    
+    return ''
+
+
 def scrap():
     url = 'https://argentina.as.com/resultados/futbol/copa_liga_argentina/clasificacion/'
 

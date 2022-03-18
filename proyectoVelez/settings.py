@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'main',
     'requests',
     'django_filters',
-    
+    'django_bootstrap_icons',
 ]
 
 MIDDLEWARE = [

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static%}
+{% load bootstrap_icons %}
 <html lang="en">
 
 <head>
@@ -11,8 +12,8 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{% static 'img/favicon.png' %}" rel="icon">
-  <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+  <link href="{% static 'img/escudo.svg' %}" rel="icon">
+  <link href="{% static 'img/escudo.svg' %}">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Raleway:300,400,400i,500,500i,700,800,900" rel="stylesheet">
@@ -42,10 +43,10 @@
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex justify-content-between">
 
-      <div class="logo">
-        <h1><a href="index.html">Velez Sarsfield</a></h1>
+      <div class= "logo" style="width: 600px;" >
+        <a href="index.html"><img src="{% static 'img/escudo.svg' %}" alt="" class="img-fluid"><h1>Velez Sarsfield</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        
       </div>
 
       <nav id="navbar" class="navbar">
@@ -202,28 +203,12 @@
               </ol>
               <button>sign up now</button>
             </div>
-          </div>
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="pri_table_list active">
-              <span class="saleon">top sale</span>
-              <h3>standard <br /> <span>$110 / month</span></h3>
-              <ol>
-                <li class="check"><i class="bi bi-check"></i><span>Online system</span></li>
-                <li class="check"><i class="bi bi-check"></i><span>Full access</span></li>
-                <li class="check"><i class="bi bi-check"></i><span>Free apps</span></li>
-                <li class="check"><i class="bi bi-check"></i><span>Multiple slider</span></li>
-                <li class="cross"><i class="bi bi-x"></i><span>Free domin</span></li>
-                <li class="check"><i class="bi bi-check"></i><span>Support unlimited</span></li>
-                <li class="check"><i class="bi bi-check"></i><span>Payment online</span></li>
-                <li class="cross"><i class="bi bi-x"></i><span>Cash back</span></li>
-              </ol>
-              <button>sign up now</button>
-            </div>
-          </div> -->
+          </div>-->
+          
         
           <div class="col-md-4 col-sm-4 col-xs-12">
             <div class="pri_table_list">
-              <table class="table table-sm">
+              <table class="table table-sm table-striped">
                 <thead>
                   
                   <th>
@@ -258,10 +243,15 @@
                 
                   {% for i in equipos %}
                 <tr>
-                  
+                  {% if i.nombre == 'Vélez Sarsfield' %}
+                  <td class="text-primary">
+                    <strong>{{i.nombre}}</strong>
+                  </td>
+                  {% else %}
                   <td>
                     {{i.nombre}}
                   </td>
+                  {% endif %}
                   <td>
                     {{i.pts}}
                   </td>
@@ -292,18 +282,52 @@
                 {% endfor %}
               </tbody>
               </table>
-              <!-- <h3>premium <br /> <span>$150 / month</span></h3>
-              <ol>
-                <li class="check"><span>Online system</span></li>
-                <li class="check"><i class="bi bi-check"></i><span>Full access</span></li>
-                <li class="check"><i class="bi bi-check"></i><span>Free apps</span></li>
-                <li class="check"><i class="bi bi-check"></i><span>Multiple slider</span></li>
-                <li class="check"><i class="bi bi-check"></i><span>Free domin</span></li>
-                <li class="check"><i class="bi bi-check"></i><span>Support unlimited</span></li>
-                <li class="check"><i class="bi bi-check"></i><span>Payment online</span></li>
-                <li class="check"><i class="bi bi-check"></i><span>Cash back</span></li>
-              </ol>
-              <button>sign up now</button> -->
+             
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="pri_table_list">
+              
+              <h3>Fixture</h3>
+             
+              {% for r in resultados %}
+              
+              <div class="row">
+                {% if r.tournament != 'Copa Argentina' %}
+                
+                <table>
+                  <tr>
+                    <td style="width: 80px;">{{r.date}}</td>
+                    <td>{{r.stage}}</td>
+                  </tr>
+                </table>
+                <!-- <div class="d-inline">{{r.date}}</div><div class="d-inline">{{r.stage}}</div> -->
+                {% for l in r.teams %}
+                
+                <div class="col-md-6 col-sm-6 mt-2">
+                  {% if l.red_card != True %}
+                  <img src="{{l.thumbnail}}" alt="" width="20" height="20">
+                  <strong>{{l.name}}</strong>
+                  {% else %}
+                  <img src="{{l.thumbnail}}" alt="" width="20" height="20">
+                  <strong>{{l.name}}</strong><img src="{% static 'img/red-card-right.svg' %}" alt="">
+                  {% endif %}
+                </div>
+
+                <div class="col-md-6 col-sm-6 mt2">
+                  <strong>{{l.score}}</strong>
+                </div>
+                  
+               {% endfor %}
+               
+               <br />
+               <br />
+               {% endif %}
+              </div>
+              {% endfor %}
+              
+            
             </div>
           </div>
         </div>
@@ -401,7 +425,7 @@
   </footer><!-- End  Footer -->
 
   <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="{% bs_icon 'arrow-up' size='1.5em' %}"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
