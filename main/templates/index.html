@@ -54,8 +54,8 @@
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">El club</a></li>
           <li><a class="nav-link scrollto" href="#services">Institucion</a></li>
-          <li><a class="nav-link scrollto" href="#portfolio">Estadicticas</a></li>
-          <li><a class="nav-link scrollto" href="#team">Plantel</a></li>
+          <li><a class="nav-link scrollto" href="#pricing">Estadicticas</a></li>
+          <li><a class="nav-link scrollto" href="#plantel">Plantel</a></li>
           <!-- <li><a href="blog.html">Blog</a></li> -->
           <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
@@ -206,13 +206,15 @@
           </div>-->
           
         
-          <div class="col-md-4 col-sm-4 col-xs-12">
+          <!-- <div class="col-md-4 col-sm-4 col-xs-12">
             <div class="pri_table_list">
               <table class="table table-sm table-striped">
-                <thead>
-                  
+                <thead class="table-dark">
                   <th>
-                    Equipo
+                    #
+                  </th>
+                  <th>
+                    Equipos
                   </th>
                   <th>
                     Pts
@@ -236,13 +238,16 @@
                     GC
                   </th>
                   <th>
-                    Dif
+                    DIF
                   </th>
                 </thead>
                 <tbody>
-                
+                  
                   {% for i in equipos %}
                 <tr>
+                  <td>
+                    {{i.puesto}}
+                  </td>
                   {% if i.nombre == 'Vélez Sarsfield' %}
                   <td class="text-primary">
                     <strong>{{i.nombre}}</strong>
@@ -253,7 +258,7 @@
                   </td>
                   {% endif %}
                   <td>
-                    {{i.pts}}
+                    <strong>{{i.puntos}}</strong>
                   </td>
                   <td>
                     {{i.pj}}
@@ -284,6 +289,107 @@
               </table>
              
             </div>
+          </div> -->
+
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="pri_table_list">
+              <h3>Tabla de posiciones</h3>
+              <div><h6>Copa de la liga Profesional</h6></div>
+              <table class="table table-sm table-striped">
+
+                <thead class="table-dark">
+                 
+                  <th>
+                    #
+                  </th>
+                  <th>
+                    
+                  </th>
+                  <th>
+                    Equipos
+                  </th>
+                  <th>
+                    PJ
+                  </th>
+                  <th>
+                    G
+                  </th>
+                  <th>
+                    E
+                  </th>
+                  <th>
+                    P
+                  </th>
+                  <th>
+                    GF
+                  </th>
+                  <th>
+                    GC
+                  </th>
+                  <th>
+                    DIF
+                  </th>
+                  <th>
+                    PTS
+                  </th>
+                  
+                </thead>
+                <tbody>
+                  
+                  {% for e in tabla %}
+                <tr>
+
+                  <td>
+                    {{e.puesto}}
+                  </td>
+
+                  {% for l in e.logo %}
+                  
+                  <td>
+                    <img src="{{l.href}}" alt="" width="150" height="150">
+                  </td>
+                  
+                  {% if e.name == 'Vélez Sarsfield' %}
+                  <td class="text-primary">
+                <strong>{{e.name}}</strong>
+                  </td>
+                  {% else %}
+                  <td>
+                  {{e.name}}
+                  </td>
+                  {% endif %}
+                  <td>
+                    {{e.pj.value |floatformat:"0"}}
+                  </td>
+                  
+                  <td>
+                    {{e.g.value|floatformat:"0"}}
+                  </td>
+                  <td>
+                    {{e.e.value|floatformat:"0"}}
+                  </td>
+                  <td>
+                    {{e.p.value|floatformat:"0"}}
+                  </td>
+                  <td>
+                    {{e.gf.value|floatformat:"0"}}
+                  </td>
+                  <td>
+                    {{e.gc.value|floatformat:"0"}}
+                  </td>
+                  <td>
+                    {{e.dif.displayValue|floatformat:"0"}}
+                  </td>
+                  <td>
+                    <strong>{{e.pts.value|floatformat:"0"}}</strong>
+                  </td>
+                </tr>
+                {% endfor %}
+                {% endfor %}
+              </tbody>
+              </table>
+             
+            </div>
           </div>
 
           <div class="col-md-4 col-sm-4 col-xs-12">
@@ -302,7 +408,7 @@
                     <td>{{r.stage}}</td>
                   </tr>
                 </table>
-                <!-- <div class="d-inline">{{r.date}}</div><div class="d-inline">{{r.stage}}</div> -->
+                
                 {% for l in r.teams %}
                 
                 <div class="col-md-6 col-sm-6 mt-2">
@@ -330,13 +436,195 @@
             
             </div>
           </div>
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="pri_table_list">
+              
+              <h3>Estadistica Jugadores</h3>
+             
+              
+
+              <!-- Nav tabs -->
+              <ul class="nav nav-pills nav-justified " id="pills-tab" >
+                <li class="nav-item " >
+                  <a class="nav-link active"  data-bs-toggle="pill" href="#pills-goles" aria-expanded="false" >Goles</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="pill" href="#pills-asist" role="button" aria-expanded="false">Asistencias</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="pill" href="#pills-tarjetas" role="button" aria-expanded="false">Tarjetas</a>
+                </li>
+                
+              </ul>
+              <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-goles" role="tabpanel" aria-labelledby="pills-goles-tab">
+                  <table class="table table-sm table-light table-striped mt-3">
+
+                    <thead class="table-dark">
+                     
+                      <th>
+                        Pos
+                      </th>
+                      <th>
+                        Nombre
+                      </th>
+                      <th>
+                        J
+                      </th>
+                      <th>
+                        G
+                      </th>
+                      
+                    </thead>
+                    <tbody>
+                      
+                      {% for e in goles.goles %}
+                    <tr>
+    
+                      <td>
+                        {{e.puesto}}
+                      </td>
+    
+                      
+                      <td>
+                        {{e.name}}
+                      </td>
+    
+                      
+                      
+                    
+                      <td>
+                        {{e.pj.value |floatformat:"0"}}
+                      </td>
+                      
+                      <td>
+                        {{e.g.value|floatformat:"0"}}
+                      </td>
+                      
+                      
+                    </tr>
+                   
+                    {% endfor %}
+                  </tbody>
+                  </table>
+                </div>
+                <div class="tab-pane fade" id="pills-asist" role="tabpanel" aria-labelledby="pills-asist-tab">
+                  <table class="table table-sm table-striped mt-3">
+
+                    <thead class="table-dark">
+                     
+                      <th>
+                        Pos
+                      </th>
+                      <th>
+                        Nombre
+                      </th>
+                      <th>
+                        J
+                      </th>
+                      <th>
+                        A
+                      </th>
+                      
+                    </thead>
+                    <tbody>
+                      
+                      {% for e in goles.asist %}
+                    <tr>
+    
+                      <td>
+                        {{e.puesto}}
+                      </td>
+    
+                      
+                      <td>
+                        {{e.name}}
+                      </td>
+    
+                      
+                      
+                      <td>
+                        {{e.pj.value |floatformat:"0"}}
+                      </td>
+                      
+                      
+                      <td>
+                        {{e.a.value|floatformat:"0"}}
+                      </td>
+                      
+                      
+                    </tr>
+                   
+                    {% endfor %}
+                  </tbody>
+                  </table>
+                </div>
+                <div class="tab-pane fade" id="pills-tarjetas" role="tabpanel" aria-labelledby="pills-tarjetas-tab">
+                  <table class="table table-sm table-striped mt-3">
+
+                    <thead class="table-dark">
+                     
+                      <th>
+                        Pos
+                      </th>
+                      <th>
+                        Nombre
+                      </th>
+                      <th>
+                        J
+                      </th>
+                      <th>
+                        TA
+                      </th>
+                      <th>
+                        TR
+                      </th>
+                    </thead>
+                    <tbody>
+                      
+                      {% for e in tarjetas %}
+                    <tr>
+    
+                      <td>
+                        {{e.puesto}}
+                      </td>
+    
+                      
+                      <td>
+                        {{e.name}}
+                      </td>
+    
+                      <td>
+                        {{e.pj.value |floatformat:"0"}}
+                      </td>
+                      
+                      <td>
+                        {{e.ta.value |floatformat:"0"}}
+                      </td>
+                      
+                      
+                      <td>
+                        {{e.tr.value|floatformat:"0"}}
+                      </td>
+                      
+                      
+                    </tr>
+                   
+                    {% endfor %}
+                  </tbody>
+                  </table>
+              </div>
+              </div>
+            
+            </div>
+          </div>
         </div>
       </div>
     </div><!-- End Pricing Section -->
 
 
       <!-- ======= Plantel Section ======= -->
-      <div id="team" class="our-team-area area-padding">
+      <div id="plantel" class="our-team-area area-padding">
       <div class="container">
         <div class="row">
           <div class="col-md-12 col-sm-12 col-xs-12">
@@ -437,7 +725,13 @@
 
   <!-- Template Main JS File -->
   <script src="{% static 'js/main.js' %}"></script>
-
+  
+  <!-- <script>
+    var firstTabEl = document.querySelector('#pills-tab li:last-child a')
+    var firstTab = new bootstrap.Tab(firstTabEl)
+  
+    firstTab.show()
+  </script> -->
 </body>
 
 </html>

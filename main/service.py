@@ -35,52 +35,53 @@ def resultados(params={}):
     return ''
 
 
-def scrap():
-    url = 'https://argentina.as.com/resultados/futbol/copa_liga_argentina/clasificacion/'
+# def scrap():
+#     url = 'https://argentina.as.com/resultados/futbol/copa_liga_argentina/clasificacion/'
 
-    page = requests.get(url)
+#     page = requests.get(url)
 
-    soup = BeautifulSoup(page.content, 'html.parser')
+#     soup = BeautifulSoup(page.content, 'html.parser')
 
-    #Equipos
-    eq = soup.find_all('span', class_='nombre-equipo')
-    pt = soup.find_all('td', class_='destacado')
+#     #Equipos
+#     eq = soup.find_all('span', class_='nombre-equipo')
+#     pt = soup.find_all('td', class_='destacado')
     
-    url_velez = 'https://velez.com.ar/futbol/estadisticas'
+#     url_velez = 'https://velez.com.ar/futbol/estadisticas'
   
-    url_link = requests.get(url_velez) 
-    file = BeautifulSoup(url_link.content, 'html.parser') 
+#     url_link = requests.get(url_velez) 
+#     file = BeautifulSoup(url_link.content, 'html.parser') 
   
-    find_table = file.find('table', class_='table table-bordered table-hover text-center') 
-    rows = find_table.find_all('tr') 
-    est = list()
-    count = 0
-    for i in rows: 
-        table_data = i.find_all('td')
-        data = [j.text for j in table_data] 
-        est.append(data)
+#     find_table = file.find('table', class_='table table-bordered table-hover text-center') 
+#     rows = find_table.find_all('tr') 
+#     est = list()
+#     count = 0
+#     for i in rows: 
+#         table_data = i.find_all('td')
+#         data = [j.text for j in table_data] 
+#         est.append(data)
 
-    posiciones = list()
+#     posiciones = list()
     
-    count = 14
-    i = 1
-    while count < 28:
+#     count = 14
+#     i = 1
+#     while count < 28:
         
-        signer_json = {}
-        signer_json['nombre'] = eq[count].text
-        signer_json['puntos'] = pt[count].text
-        signer_json['pj'] = est[i][2]
-        signer_json['g'] = est[i][3]
-        signer_json['e'] = est[i][4]
-        signer_json['p'] = est[i][5]
-        signer_json['gf'] = est[i][6]
-        signer_json['gc'] = est[i][7]
-        signer_json['dif'] = est[i][8]
-        posiciones.append(signer_json)
-        i +=1
-        count += 1
+#         tablaProsiciones = {}
+#         tablaProsiciones['puesto'] = i
+#         tablaProsiciones['nombre'] = eq[count].text
+#         tablaProsiciones['puntos'] = pt[count].text
+#         tablaProsiciones['pj'] = est[i][2]
+#         tablaProsiciones['g'] = est[i][3]
+#         tablaProsiciones['e'] = est[i][4]
+#         tablaProsiciones['p'] = est[i][5]
+#         tablaProsiciones['gf'] = est[i][6]
+#         tablaProsiciones['gc'] = est[i][7]
+#         tablaProsiciones['dif'] = est[i][8]
+#         posiciones.append(tablaProsiciones)
+#         i +=1
+#         count += 1
 
-    return posiciones
+#     return posiciones
 
 # def prueba():
 #     URL = 'https://velez.com.ar/futbol/estadisticas'
@@ -120,3 +121,123 @@ def scrap():
 
 #     return datos
   
+def tabla(params={}):
+    response = generate_request('https://site.web.api.espn.com/apis/v2/sports/soccer/arg.copa_lpf/standings?region=ar&lang=es&contentorigin=deportes&season=2022&sort=rank%3Aasc', params)
+    
+    if response:
+        
+        fixture = response['children']
+        i = 1
+        datos = list() 
+        for t in fixture:
+        
+            if t['id'] == "2":
+                #return  t['standings']['entries']
+                for s in t['standings']['entries']:
+            
+                    tablaProsiciones = {}
+                    tablaProsiciones['puesto'] = i
+                    tablaProsiciones['logo'] = s['team']['logos']
+                    tablaProsiciones['name'] = s['team']['name']
+                    tablaProsiciones['pj'] = s['stats'][3]
+                    tablaProsiciones['g'] = s['stats'][0]
+                    tablaProsiciones['e'] = s['stats'][2]
+                    tablaProsiciones['p'] = s['stats'][1]
+                    tablaProsiciones['gf'] = s['stats'][4]
+                    tablaProsiciones['gc'] = s['stats'][5]
+                    tablaProsiciones['dif'] = s['stats'][9]
+                    tablaProsiciones['pts'] = s['stats'][6]
+
+                    datos.append(tablaProsiciones)
+
+                    i +=1
+
+                    
+                return datos
+    
+    return ''
+
+
+def goles(params={}):
+    response = generate_request('https://site.web.api.espn.com/apis/site/v2/sports/soccer/ARG.COPA_LPF/teams/21/statistics?region=ar&lang=es&contentorigin=deportes&level=1', params)
+    
+    if response:
+        
+        fixture = response['results']['stats']
+        i = 1
+        datos = list()
+        asist = list()
+        est = {}
+
+        for t in fixture:
+            
+            if t['name'] == 'goalsLeaders':
+                for s in t['leaders']:
+                    
+
+                    tablaProsiciones = {}
+                    tablaProsiciones['puesto'] = i
+                    tablaProsiciones['name'] = s['athlete']['displayName']
+                    tablaProsiciones['pj'] = s['athlete']['statistics'][0]
+                    tablaProsiciones['g'] = s['athlete']['statistics'][1]
+
+                    datos.append(tablaProsiciones)
+                    i +=1
+                    if i == 11:
+                        break
+
+                
+
+                est['goles'] = datos
+            else:
+                i = 1
+                for s in t['leaders']:
+                    
+
+                    tablaProsiciones = {}
+                    tablaProsiciones['puesto'] = i
+                    tablaProsiciones['name'] = s['athlete']['displayName']
+                    tablaProsiciones['pj'] = s['athlete']['statistics'][0]
+                    tablaProsiciones['a'] = s['athlete']['statistics'][2]
+
+                    asist.append(tablaProsiciones)
+                    i +=1
+                    if i == 11:
+                        break
+                
+                est['asist'] = asist
+
+        return est
+         
+        
+    return ''
+
+
+def tarjetas(params={}):
+    response = generate_request('https://site.web.api.espn.com/apis/site/v2/sports/soccer/ARG.COPA_LPF/teams/21/statistics?region=ar&lang=es&contentorigin=deportes&level=2', params)
+    
+    if response:
+        
+        fixture = response['results']['stats']
+        i = 1
+        datos = list()
+
+        for t in fixture:
+            
+                
+
+            tablaProsiciones = {}
+            tablaProsiciones['puesto'] = i
+            tablaProsiciones['name'] = t['displayName']
+            tablaProsiciones['pj'] = t['statistics'][0]
+            tablaProsiciones['tr'] = t['statistics'][1]
+            tablaProsiciones['ta'] = t['statistics'][2]
+            datos.append(tablaProsiciones)
+            i +=1
+            if i == 11:
+                break
+        
+        return datos
+         
+        
+    return ''
