@@ -219,7 +219,7 @@
    * Testimonials slider
    */
   new Swiper('.testimonials-slider', {
-    effect: 'cards',
+    effect: '',
   cardsEffect: {
     slideShadows: false,
   },

@@ -1,8 +1,9 @@
-from django.http import JsonResponse
+#from datetime import datetime
 import requests
 import pandas as pd
 from bs4 import BeautifulSoup
 import json
+import datetime
 
 
 def generate_request(url, params={}):
@@ -23,16 +24,59 @@ def get_username(params={}):
     return ''
 
 
-def resultados(params={}):
-    response = generate_request('https://serpapi.com/search.json?engine=google&q=resultados+velez+sarsfield&location=Mexico&google_domain=google.com.mx&gl=mx&hl=es&api_key=380a1822a2d4935cffd76013b3b82740ee1ae43ee801bc0690edf4d5b916c0c5', params)
+# def resultados(params={}):
+#     response = generate_request('https://serpapi.com/search.json?engine=google&q=resultados+velez+sarsfield&location=Mexico&google_domain=google.com.mx&gl=mx&hl=es&api_key=380a1822a2d4935cffd76013b3b82740ee1ae43ee801bc0690edf4d5b916c0c5', params)
     
+#     if response:
+
+#        fixture = response['sports_results']['games']
+       
+#        return fixture
+    
+#     return ''
+
+
+def resultados(params={}):
+    response = generate_request('https://site.web.api.espn.com/apis/site/v2/sports/soccer/all/teams/21/schedule?region=ar&lang=es&season=2022', params)
+    
+    resultado = list()
+
+    i = 1
     if response:
 
-       fixture = response['sports_results']['games']
-       
-       return fixture
+        fixture = response['events']
+        
+        for c in fixture:
+            if c['id'] != '625787':
+                for e in c['competitions']:
+                    fecha = e['date']
+                    dia = datetime.datetime.strptime(fecha, '%Y-%m-%dT%H:%MZ').strftime('%A')
+                    fecha1 = datetime.datetime.strptime(fecha, '%Y-%m-%dT%H:%MZ').strftime("%d-%m-%Y")
+                    
+                    
+                    #for l in e['competitors']:
+                        
+                    tablaProsiciones = {}
+                    tablaProsiciones['dia'] = dia
+                    tablaProsiciones['fecha'] = fecha1
+                    tablaProsiciones['equipo1'] = e['competitors'][0]['team']['displayName']
+                    tablaProsiciones['equipo2'] = e['competitors'][1]['team']['displayName']
+                    tablaProsiciones['logo1'] = e['competitors'][0]['team']['logos'][0]
+                    tablaProsiciones['logo2'] = e['competitors'][1]['team']['logos'][0]
+                    tablaProsiciones['score1'] = e['competitors'][0]['score']['value']
+                    tablaProsiciones['score2'] = e['competitors'][1]['score']['value']
+                    
+
+                    resultado.append(tablaProsiciones)
+                        
+                        # i +=1
+                        # if i == 6:
+                        #     break
+         
+        return resultado
     
     return ''
+
 
 
 # def scrap():
