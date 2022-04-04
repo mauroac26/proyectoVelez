@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-from .service import get_username, tabla, resultados, goles, tarjetas
+from .service import get_username, tabla, resultados, goles, tarjetas, calendario
 
 def index(requests):
     
@@ -11,7 +11,8 @@ def index(requests):
         'resultados': resultados(),
         'tabla': tabla(),
         'goles': goles(),
-        'tarjetas': tarjetas()
+        'tarjetas': tarjetas(),
+        'calendario': calendario()
     }
     
     return render(requests, 'index.html', context)

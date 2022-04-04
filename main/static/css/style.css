@@ -126,7 +126,7 @@ body {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: #3ec1d5;
+  background: #3955f8;
   width: 40px;
   height: 40px;
   transition: all 0.4s;
@@ -137,8 +137,8 @@ body {
   line-height: 0;
 }
 .back-to-top:hover {
-  background: #60ccdc;
-  color: #fff;
+  background: #3955f8;
+  color: #ffffff;
 }
 .back-to-top.active {
   visibility: visible;
@@ -197,7 +197,7 @@ div#preloader {
   display: inline-block;
   font-size: 40px;
   font-weight: 600;
-  margin-bottom: 70px;
+  margin-bottom: 20px;
   position: relative;
   text-transform: capitalize;
 }

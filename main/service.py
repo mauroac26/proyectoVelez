@@ -78,6 +78,41 @@ def resultados(params={}):
     return ''
 
 
+def calendario(params={}):
+    response = generate_request('https://site.web.api.espn.com/apis/site/v2/sports/soccer/all/teams/21/schedule?region=ar&lang=es&fixture=true', params)
+    
+    resultado = list()
+
+    i = 1
+    if response:
+
+        fixture = response['events']
+        
+        for c in fixture:
+            calendario = {}
+            calendario['liga'] = c['league']['abbreviation']
+            for e in c['competitions']:
+                
+                fecha = e['date']
+                    
+                fecha1 = datetime.datetime.strptime(fecha, '%Y-%m-%dT%H:%MZ').strftime("%d-%m")
+                       
+                
+                calendario['fecha'] = fecha1
+                calendario['equipo1'] = e['competitors'][0]['team']['displayName']
+                calendario['equipo2'] = e['competitors'][1]['team']['displayName']
+                calendario['logo1'] = e['competitors'][0]['team']['logos'][0]
+                calendario['logo2'] = e['competitors'][1]['team']['logos'][0]
+                
+
+                resultado.append(calendario)
+                        
+                        
+         
+        return resultado
+    
+    return ''
+
 
 # def scrap():
 #     url = 'https://argentina.as.com/resultados/futbol/copa_liga_argentina/clasificacion/'
