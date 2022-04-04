@@ -294,100 +294,224 @@
           <div class="col-md-8 col-sm-8 col-xs-12">
             <div class="pri_table_list">
               <h3>Tabla de posiciones</h3>
-              <div><h6>Copa de la liga Profesional</h6></div>
-              <table class="table table-sm table-striped">
+              <!-- <div><h6>Copa de la liga Profesional</h6></div> -->
 
-                <thead class="table-dark">
-                 
-                  <th>
-                    #
-                  </th>
-                  <th>
+              <ul class="nav nav-pills nav-justified " id="pills-tab-fixture" >
+                <li class="nav-item " >
+                  <a class="nav-link active"  data-bs-toggle="pill" href="#pills-tablaLiga" aria-expanded="false" >Copa de la liga Profecional</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="pill" href="#pills-tablaLib" role="button" aria-expanded="false">Libertadores</a>
+                </li>
+                
+              </ul>
+
+              <div class="tab-content " id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-tablaLiga" role="tabpanel" aria-labelledby="pills-tablaLiga-tab">
+                  <div class="row mt-3">
                     
-                  </th>
-                  <th>
-                    Equipos
-                  </th>
-                  <th>
-                    PJ
-                  </th>
-                  <th>
-                    G
-                  </th>
-                  <th>
-                    E
-                  </th>
-                  <th>
-                    P
-                  </th>
-                  <th>
-                    GF
-                  </th>
-                  <th>
-                    GC
-                  </th>
-                  <th>
-                    DIF
-                  </th>
-                  <th>
-                    PTS
-                  </th>
-                  
-                </thead>
-                <tbody>
-                  
-                  {% for e in tabla %}
-                <tr>
+                    <div class="col-md-12 col-sm-12 ">
+                  <table class="table table-sm table-striped ">
 
-                  <td>
-                    {{e.puesto}}
-                  </td>
+                    <thead class="table-dark">
+                     
+                      <th>
+                        #
+                      </th>
+                      <th>
+                        
+                      </th>
+                      <th>
+                        Equipos
+                      </th>
+                      <th>
+                        PJ
+                      </th>
+                      <th>
+                        G
+                      </th>
+                      <th>
+                        E
+                      </th>
+                      <th>
+                        P
+                      </th>
+                      <th>
+                        GF
+                      </th>
+                      <th>
+                        GC
+                      </th>
+                      <th>
+                        DIF
+                      </th>
+                      <th>
+                        PTS
+                      </th>
+                      
+                    </thead>
+                    <tbody>
+                      
+                      {% for e in tabla %}
+                    <tr>
+    
+                      <td>
+                        {{e.puesto}}
+                      </td>
+    
+                      {% for l in e.logo %}
+                      
+                      <td>
+                        <img src="{{l.href}}" alt="" width="20" height="20">
+                      </td>
+                      
+                      {% if e.name == 'Vélez Sarsfield' %}
+                      <td class="text-primary text-start ">
+                    <strong>{{e.name}}</strong>
+                      </td>
+                      {% else %}
+                      <td class="text-start">
+                      {{e.name}}
+                      </td>
+                      {% endif %}
+                      <td>
+                        {{e.pj.value |floatformat:"0"}}
+                      </td>
+                      
+                      <td>
+                        {{e.g.value|floatformat:"0"}}
+                      </td>
+                      <td>
+                        {{e.e.value|floatformat:"0"}}
+                      </td>
+                      <td>
+                        {{e.p.value|floatformat:"0"}}
+                      </td>
+                      <td>
+                        {{e.gf.value|floatformat:"0"}}
+                      </td>
+                      <td>
+                        {{e.gc.value|floatformat:"0"}}
+                      </td>
+                      <td>
+                        {{e.dif.displayValue|floatformat:"0"}}
+                      </td>
+                      <td>
+                        <strong>{{e.pts.value|floatformat:"0"}}</strong>
+                      </td>
+                    </tr>
+                    {% endfor %}
+                    {% endfor %}
+                  </tbody>
+                  </table>
+                    </div>
+                  </div>
+                  
+                </div>
 
-                  {% for l in e.logo %}
-                  
-                  <td>
-                    <img src="{{l.href}}" alt="" width="20" height="20">
-                  </td>
-                  
-                  {% if e.name == 'Vélez Sarsfield' %}
-                  <td class="text-primary text-start">
-                <strong>{{e.name}}</strong>
-                  </td>
-                  {% else %}
-                  <td class="text-start">
-                  {{e.name}}
-                  </td>
-                  {% endif %}
-                  <td>
-                    {{e.pj.value |floatformat:"0"}}
-                  </td>
-                  
-                  <td>
-                    {{e.g.value|floatformat:"0"}}
-                  </td>
-                  <td>
-                    {{e.e.value|floatformat:"0"}}
-                  </td>
-                  <td>
-                    {{e.p.value|floatformat:"0"}}
-                  </td>
-                  <td>
-                    {{e.gf.value|floatformat:"0"}}
-                  </td>
-                  <td>
-                    {{e.gc.value|floatformat:"0"}}
-                  </td>
-                  <td>
-                    {{e.dif.displayValue|floatformat:"0"}}
-                  </td>
-                  <td>
-                    <strong>{{e.pts.value|floatformat:"0"}}</strong>
-                  </td>
-                </tr>
-                {% endfor %}
-                {% endfor %}
-              </tbody>
-              </table>
+                <div class="tab-pane fade" id="pills-tablaLib" role="tabpanel" aria-labelledby="pills-tablaLib-tab">
+                  <div class="row mt-3">
+                    <div class="col-md-12 col-sm-12 ">
+                  <table class="table table-sm table-striped">
+
+                    <thead class="table-dark">
+                     
+                      <th>
+                        #
+                      </th>
+                      <th>
+                        
+                      </th>
+                      <th>
+                        Equipos
+                      </th>
+                      <th>
+                        PJ
+                      </th>
+                      <th>
+                        G
+                      </th>
+                      <th>
+                        E
+                      </th>
+                      <th>
+                        P
+                      </th>
+                      <th>
+                        GF
+                      </th>
+                      <th>
+                        GC
+                      </th>
+                      <th>
+                        DIF
+                      </th>
+                      <th>
+                        PTS
+                      </th>
+                      
+                    </thead>
+                    <tbody>
+                      
+                      {% for e in tablaLibertadores %}
+                    <tr>
+    
+                      <td>
+                        {{e.puesto}}
+                      </td>
+    
+                      {% for l in e.logo %}
+                      
+                      <td>
+                        <img src="{{l.href}}" alt="" width="20" height="20">
+                      </td>
+                      
+                      {% if e.name == 'Vélez Sarsfield' %}
+                      <td class="text-primary text-start ">
+                    <strong>{{e.name}}</strong>
+                      </td>
+                      {% else %}
+                      <td class="text-start">
+                      {{e.name}}
+                      </td>
+                      {% endif %}
+                      <td>
+                        {{e.pj.value |floatformat:"0"}}
+                      </td>
+                      
+                      <td>
+                        {{e.g.value|floatformat:"0"}}
+                      </td>
+                      <td>
+                        {{e.e.value|floatformat:"0"}}
+                      </td>
+                      <td>
+                        {{e.p.value|floatformat:"0"}}
+                      </td>
+                      <td>
+                        {{e.gf.value|floatformat:"0"}}
+                      </td>
+                      <td>
+                        {{e.gc.value|floatformat:"0"}}
+                      </td>
+                      <td>
+                        {{e.dif.displayValue|floatformat:"0"}}
+                      </td>
+                      <td>
+                        <strong>{{e.pts.value|floatformat:"0"}}</strong>
+                      </td>
+                    </tr>
+                    {% endfor %}
+                    {% endfor %}
+                  </tbody>
+                  </table>
+                </div>
+                </div>
+                </div>
+                
+              </div>
+
+              
              
             </div>
           </div>
@@ -420,7 +544,7 @@
                       <span>{{r.dia}} {{r.fecha}}</span>
                     </div> 
                     
-                    <div class="col-md-4 col-sm-4 ">
+                    <div class="col-md-4 col-sm-4 text-left">
                       
                       
                       
@@ -431,7 +555,7 @@
                       <strong>{{r.score1 |floatformat:"0"}}</strong> - <strong>{{r.score2 |floatformat:"0"}}</strong>
                     </div>
 
-                    <div class="col-md-4 col-sm-4  ">
+                    <div class="col-md-4 col-sm-4 text-right">
                       
                     <span>{{r.equipo2}}</span><img src="{{r.logo2.href}}" alt="" width="20" height="20"> 
                     </div>

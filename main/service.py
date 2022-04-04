@@ -202,7 +202,7 @@ def calendario(params={}):
   
 def tabla(params={}):
     response = generate_request('https://site.web.api.espn.com/apis/v2/sports/soccer/arg.copa_lpf/standings?region=ar&lang=es&contentorigin=deportes&season=2022&sort=rank%3Aasc', params)
-    
+                               
     if response:
         
         fixture = response['children']
@@ -236,6 +236,41 @@ def tabla(params={}):
     
     return ''
 
+def tablaLibertadores(params={}):
+    response = generate_request('https://site.web.api.espn.com/apis/v2/sports/soccer/conmebol.libertadores/standings?region=ar&lang=es&contentorigin=deportes&sort=rank%3Aasc', params)
+                                
+    if response:
+        
+        fixture = response['children']
+        i = 1
+        datos = list() 
+        for t in fixture:
+        
+            if t['id'] == "3":
+                #return  t['standings']['entries']
+                for s in t['standings']['entries']:
+            
+                    tablaProsiciones = {}
+                    tablaProsiciones['puesto'] = i
+                    tablaProsiciones['logo'] = s['team']['logos']
+                    tablaProsiciones['name'] = s['team']['name']
+                    tablaProsiciones['pj'] = s['stats'][3]
+                    tablaProsiciones['g'] = s['stats'][0]
+                    tablaProsiciones['e'] = s['stats'][2]
+                    tablaProsiciones['p'] = s['stats'][1]
+                    tablaProsiciones['gf'] = s['stats'][4]
+                    tablaProsiciones['gc'] = s['stats'][5]
+                    tablaProsiciones['dif'] = s['stats'][9]
+                    tablaProsiciones['pts'] = s['stats'][6]
+
+                    datos.append(tablaProsiciones)
+
+                    i +=1
+
+                    
+                return datos
+    
+    return ''
 
 def goles(params={}):
     response = generate_request('https://site.web.api.espn.com/apis/site/v2/sports/soccer/ARG.COPA_LPF/teams/21/statistics?region=ar&lang=es&contentorigin=deportes&level=1', params)
