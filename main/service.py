@@ -23,6 +23,17 @@ def get_username(params={}):
     
     return ''
 
+# def get_username(params={}):
+#     response = generate_request('https://site.web.api.espn.com/apis/site/v2/sports/soccer/ARG.COPA_LPF/teams/21/roster?region=ar&lang=es&contentorigin=deportes&limit=99&sort=jersey%3Aasc', params)
+    
+#     if response:
+
+#        equipos = response['knowledge_graph']['jugadores']
+    
+#        return equipos
+    
+#     return ''
+
 
 # def resultados(params={}):
 #     response = generate_request('https://serpapi.com/search.json?engine=google&q=resultados+velez+sarsfield&location=Mexico&google_domain=google.com.mx&gl=mx&hl=es&api_key=380a1822a2d4935cffd76013b3b82740ee1ae43ee801bc0690edf4d5b916c0c5', params)
