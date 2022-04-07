@@ -1,4 +1,5 @@
 #from datetime import datetime
+from re import T
 import requests
 import pandas as pd
 from bs4 import BeautifulSoup
@@ -12,19 +13,8 @@ def generate_request(url, params={}):
     if response.status_code == 200:
         return response.json()
 
-def get_username(params={}):
-    response = generate_request('https://serpapi.com/searches/f2f2618f7a907b4d/622faa3ac47d3c6f6b3416bc.json', params)
-    
-    if response:
-
-       equipos = response['knowledge_graph']['jugadores']
-    
-       return equipos
-    
-    return ''
-
 # def get_username(params={}):
-#     response = generate_request('https://site.web.api.espn.com/apis/site/v2/sports/soccer/ARG.COPA_LPF/teams/21/roster?region=ar&lang=es&contentorigin=deportes&limit=99&sort=jersey%3Aasc', params)
+#     response = generate_request('https://serpapi.com/searches/f2f2618f7a907b4d/622faa3ac47d3c6f6b3416bc.json', params)
     
 #     if response:
 
@@ -33,6 +23,56 @@ def get_username(params={}):
 #        return equipos
     
 #     return ''
+
+def get_username(params={}):
+    
+    response = generate_request('https://site.web.api.espn.com/apis/site/v2/sports/soccer/ARG.COPA_LPF/teams/21/roster?region=ar&lang=es&contentorigin=deportes&limit=99', params)
+    player = {}
+
+    if response:
+        
+        arquero = jugador(response, 'Arquero')
+
+        player['arquero'] = arquero
+
+        defensor = jugador(response, 'Defensor')
+
+        player['defensa'] = defensor
+        
+        medio = jugador(response, 'Mediocampista')
+
+        player['medio'] = medio
+
+        atacante = jugador(response, 'Atacante')
+
+        player['ataque'] = atacante
+
+
+        return player
+
+    return ''
+
+def jugador(response, posicion):
+
+        resultado = list()
+
+        equipos = response['athletes']
+       
+        for n in equipos:
+            
+            if n['position']['displayName'] == posicion:
+                tablaProsiciones = {}
+                tablaProsiciones['nombre'] = n['fullName']
+                tablaProsiciones['edad'] = n['age']
+                tablaProsiciones['altura'] = n['displayHeight']
+                tablaProsiciones['pos'] = n['position']['abbreviation']
+                tablaProsiciones['peso'] = n['displayWeight']
+                tablaProsiciones['nac'] = n['citizenship']
+                resultado.append(tablaProsiciones)
+                
+        return resultado
+    
+    
 
 
 # def resultados(params={}):

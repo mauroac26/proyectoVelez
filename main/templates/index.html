@@ -851,7 +851,273 @@
         </div>
         <div class="row justify-content-md-center">
           <div class="col-md-8 col-sm-8 col-xs-12">
-    <div id="testimonials" class="testimonials">
+
+            <ul class="nav nav-pills nav-justified " id="pills-player" >
+              <li class="nav-item " >
+                <a class="nav-link active"  data-bs-toggle="pill" href="#pills-arquero" aria-expanded="false" >Arqueros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="pill" href="#pills-defensor" role="button" aria-expanded="false">Defensores</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="pill" href="#pills-medio" role="button" aria-expanded="false">Mediocampistas</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="pill" href="#pills-ataque" role="button" aria-expanded="false">Delanteros</a>
+              </li>
+              
+            </ul>
+            
+            <div class="tab-pane fade" id="pills-arquero" role="tabpanel" aria-labelledby="pills-arquero-tab">
+              <table class="table table-sm table-striped mt-3">
+
+                <thead class="table-dark">
+                 
+                  
+                  <th>
+                    Nombre
+                  </th>
+                  <th>
+                    Pos
+                  </th>
+                  <th>
+                    Edad
+                  </th>
+                  <th>
+                   Est
+                  </th>
+                  <th>
+                    P
+                  </th>
+                  <th>
+                    Nac
+                  </th>
+                </thead>
+                <tbody>
+                  
+                  {% for e in title.arquero %}
+                <tr>
+
+                  <td>
+                    {{e.nombre}}
+                  </td>
+
+                  
+                  <td>
+                    {{e.pos}}
+                  </td>
+
+                  <td>
+                    {{e.edad |floatformat:"0"}}
+                  </td>
+                  
+                  <td>
+                    {{e.altura }}
+                  </td>
+                  
+                  
+                  <td>
+                    {{e.peso}}
+                  </td>
+                  
+                  <td>
+                    {{e.nac}}
+                  </td>
+                </tr>
+               
+                {% endfor %}
+              </tbody>
+              </table>
+          </div>
+          
+
+          <div class="tab-pane fade" id="pills-defensor" role="tabpanel" aria-labelledby="pills-defensor-tab">
+            <table class="table table-sm table-striped mt-3">
+
+              <thead class="table-dark">
+               
+                
+                <th>
+                  Nombre
+                </th>
+                <th>
+                  Pos
+                </th>
+                <th>
+                  Edad
+                </th>
+                <th>
+                 Est
+                </th>
+                <th>
+                  P
+                </th>
+                <th>
+                  Nac
+                </th>
+              </thead>
+              <tbody>
+                
+                {% for e in title.defensa %}
+              <tr>
+
+                <td>
+                  {{e.nombre}}
+                </td>
+
+                
+                <td>
+                  {{e.pos}}
+                </td>
+
+                <td>
+                  {{e.edad |floatformat:"0"}}
+                </td>
+                
+                <td>
+                  {{e.altura }}
+                </td>
+                
+                
+                <td>
+                  {{e.peso}}
+                </td>
+                
+                <td>
+                  {{e.nac}}
+                </td>
+              </tr>
+             
+              {% endfor %}
+            </tbody>
+            </table>
+        </div>
+
+        <div class="tab-pane fade" id="pills-medio" role="tabpanel" aria-labelledby="pills-medio-tab">
+          <table class="table table-sm table-striped mt-3">
+
+            <thead class="table-dark">
+             
+              
+              <th>
+                Nombre
+              </th>
+              <th>
+                Pos
+              </th>
+              <th>
+                Edad
+              </th>
+              <th>
+               Est
+              </th>
+              <th>
+                P
+              </th>
+              <th>
+                Nac
+              </th>
+            </thead>
+            <tbody>
+              
+              {% for e in title.medio %}
+            <tr>
+
+              <td>
+                {{e.nombre}}
+              </td>
+
+              
+              <td>
+                {{e.pos}}
+              </td>
+
+              <td>
+                {{e.edad |floatformat:"0"}}
+              </td>
+              
+              <td>
+                {{e.altura }}
+              </td>
+              
+              
+              <td>
+                {{e.peso}}
+              </td>
+              
+              <td>
+                {{e.nac}}
+              </td>
+            </tr>
+           
+            {% endfor %}
+          </tbody>
+          </table>
+      </div>
+
+      <div class="tab-pane fade" id="pills-ataque" role="tabpanel" aria-labelledby="pills-ataque-tab">
+        <table class="table table-sm table-striped mt-3">
+
+          <thead class="table-dark">
+           
+            
+            <th>
+              Nombre
+            </th>
+            <th>
+              Pos
+            </th>
+            <th>
+              Edad
+            </th>
+            <th>
+             Est
+            </th>
+            <th>
+              P
+            </th>
+            <th>
+              Nac
+            </th>
+          </thead>
+          <tbody>
+            
+            {% for e in title.ataque %}
+          <tr>
+
+            <td>
+              {{e.nombre}}
+            </td>
+
+            
+            <td>
+              {{e.pos}}
+            </td>
+
+            <td>
+              {{e.edad |floatformat:"0"}}
+            </td>
+            
+            <td>
+              {{e.altura }}
+            </td>
+            
+            
+            <td>
+              {{e.peso}}
+            </td>
+            
+            <td>
+              {{e.nac}}
+            </td>
+          </tr>
+         
+          {% endfor %}
+        </tbody>
+        </table>
+    </div>
+    <!-- <div id="testimonials" class="testimonials">
  
   
           <div class="testimonials-slider swiper">
@@ -899,7 +1165,7 @@
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
           </div>
-      </div>
+      </div> -->
         </div>
         </div>
       </div>
