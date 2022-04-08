@@ -852,8 +852,9 @@
         </div>
         <div class="row justify-content-md-center">
           <div class="col-md-8 col-sm-8 col-xs-12">
-
-            <ul class="nav nav-pills nav-justified " id="pills-player" >
+            
+            
+            <!-- <ul class="nav nav-pills nav-justified " id="pills-player" >
               <li class="nav-item " >
                 <a class="nav-link active"  data-bs-toggle="pill" href="#pills-arquero" aria-expanded="false" >Arqueros</a>
               </li>
@@ -1119,40 +1120,41 @@
         </tbody>
         </table>
     </div>
-  </div>
-    <!-- <div id="testimonials" class="testimonials">
+  </div> -->
+    <div id="testimonials" class="testimonials">
  
   
           <div class="testimonials-slider swiper">
             <div class="swiper-wrapper">
               
               {% for p in title %}
-              
-              {{ i|add:2}}
-              <p>{{i}}</p>
+            
+             
               <div class="swiper-slide">
                 
                 
     
                 <div class="testimonial-item">
                   
-                    <div class="row">
-                    <div class=" col">
-                      <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                        <div class="team-img">
-                          <a href="#">
-                            <img src="{{p.image}}" alt="" width="200" height="200" />
-                          </a>
+                  <div class="row justify-content-md-center">
+          
+                    {% for e in title.arquero %}
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                      
+                      
+                          <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                            <div class="contenedor">
+                        <img src="{% static 'img/camiseta.jpg' %}" alt="" width="50" height="50">
+                   
+                        <div class="centrado">{{e.peso}}</div>
                         </div>
-                        <div class="team-content text-center">
-                          <h4>{{p.name}}</h4>
-                          <p>{{p.extensions}}</p>
-                        </div>
-                        </div>
-                      </div>
-                      </div>
-                        </div>
+                            
+                            </div>
+                          </div>
+                          </div>
+                          {% endfor %}
+                            </div>
                         
                 </div>
                 
@@ -1168,7 +1170,7 @@
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
           </div>
-      </div> -->
+      </div>
         </div>
         </div>
       </div>
