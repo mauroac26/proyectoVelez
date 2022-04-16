@@ -12,13 +12,17 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
+  <!-- <link href="{% static 'img/escudo.svg' %}" rel="icon">
+  <link href="{% static 'img/escudo.svg' %}"> -->
+
   <link href="{% static 'img/escudo.svg' %}" rel="icon">
-  <link href="{% static 'img/escudo.svg' %}">
+  <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Raleway:300,400,400i,500,500i,700,800,900" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
+  <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
   <link href="{% static 'vendor/animate.css/animate.min.css' %}" rel="stylesheet">
   <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
   <link href="{% static 'bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
@@ -43,41 +47,23 @@
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex justify-content-between">
 
-      <div class= "logo" style="width: 600px;" >
-        <a href="index.html"><img src="{% static 'img/escudo.svg' %}" alt="" class="img-fluid"><h1>Velez Sarsfield</a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
+      <div class= "logo" >
+        <a href="{% url 'index' %}"><img src="{% static 'img/escudo.svg' %}" alt="" class="img-fluid" ><h1 >Velez Sarsfield</h1></a>
+     
         
       </div>
+
 
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#club">El club</a></li>
-          <li><a class="nav-link scrollto" href="#services">Institucion</a></li>
-          <li><a class="nav-link scrollto" href="#estadisticas">Estadicticas</a></li>
+          <li><a class="nav-link scrollto" href="#institucion">Institucion</a></li>
+          <li><a class="nav-link scrollto" href="#estadisticas">Estadisticas</a></li>
           <li><a class="nav-link scrollto" href="#plantel">Plantel</a></li>
           <li><a class="nav-link scrollto" href="#titulos">Titulos</a></li>
-          <!-- <li><a href="blog.html">Blog</a></li> -->
-          <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li> -->
-          <!-- <li><a class="nav-link scrollto" href="#contact">Contact</a></li> -->
         </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
+        <i class="fa fa-bars mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
     </div>
@@ -175,7 +161,98 @@
       </div>
     </div><!-- End About Section -->
 
-      
+    
+    <!-- ======= Institucion Section ======= -->
+    <section id="testimonials">
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="section-headline text-center">
+              <h2>Institucion</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3">
+            <div class="profile">
+              <div class="pic"><img src="{% static '/img/estadio.jpg' %}" alt=""></div>
+              <h4>Estadio</h4>
+            
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="quote">
+               El Estadio José Amalfitani o Estadio Vélez Sarsfield, conocido popularmente como El Fortín o El Teatro de Liniers, es un estadio ubicado en el barrio de Liniers, en el extremo oeste de la ciudad de Buenos Aires. <br/>
+              <ul style="list-style-type: circle; margin-left: 20px;">
+                <li>Dirección: Av. Juan B. Justo 9200, C1408AKU CABA</li>
+                <li>Capacidad: 49.540 espectadores</li>
+                <li>Inauguración: 11 de abril de 1943</li>
+              </ul>
+          
+              </div>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-md-9">
+            <div class="quote">
+               A la hinchada se la conoce como Fortineros o la Pandilla de Liniers.<br/>
+               <ul style="list-style-type: circle; margin-left: 20px;">
+                 <li>Socios: 33.225</li>
+                 <li>Peñas: 37</li>
+               </ul>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="profile">
+              <div class="pic"><img src="{% static '/img/hinchada.jpg' %}" alt=""></div>
+              <h4>Hinchada</h4>
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-md-3">
+            <div class="profile">
+              <div class="pic"><img src="{% static '/img/villa.jpg' %}" alt="" width="400px" height="400px"></div>
+              <h4>Instalaciones</h4>
+            
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="quote">
+              Las Instalaciones de la institución incluyen un predio de 18 hectáreas para la práctica de fútbol, un polideportivo, y un instituto educativo.<br/>
+              <ul style="list-style-type: circle; margin-left: 20px;">
+                <li>Sede: Está ubicada en el mismo lugar que el estadio.</li>
+                <li>Polideportivo: Inaugurado en 1977, Vélez Sarsfield tiene un polideportivo donde se realizan múltiples actividades deportivas.</li>
+                <li>Villa Olímpica: Es un predio de 18 hectáreas, el cual es utilizado por el plantel profesional y las categorías juveniles como espacio de concentración y entrenamiento.</li>
+                <li>Educación: El Instituto Dr. Dalmacio Vélez Sarsfield está en funcionamiento desde 1980. </li>
+              </ul>
+          
+              </div>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-md-9">
+            <div class="quote">
+              Entre los deportes desarrollados se encuentra el atletismo (masculino y femenino), el baloncesto (masculino y femenino), el balonmano, el béisbol, el boxeo, el cestoball, el ciclismo, la gimnasia artística, la halterofilia, el hockey (sobre césped y patines), la lucha, la natación (masculina y femenina), el tenis (masculino y femenino), y el voleibol.
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="profile">
+              <div class="pic"><img src="{% static '/img/deportivo.jpg' %}" alt="" width="500px" height="600px"></div>
+              <h4>Deportivo</h4>
+              
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End institucion Section -->
+
     <!-- ======= Pricing Section ======= -->
     <div id="estadisticas" class="pricing-area area-padding">
       <div class="container">
@@ -294,100 +371,224 @@
           <div class="col-md-8 col-sm-8 col-xs-12">
             <div class="pri_table_list">
               <h3>Tabla de posiciones</h3>
-              <div><h6>Copa de la liga Profesional</h6></div>
-              <table class="table table-sm table-striped">
+              <!-- <div><h6>Copa de la liga Profesional</h6></div> -->
 
-                <thead class="table-dark">
-                 
-                  <th>
-                    #
-                  </th>
-                  <th>
+              <ul class="nav nav-pills nav-justified " id="pills-tab-fixture" >
+                <li class="nav-item " >
+                  <a class="nav-link active"  data-bs-toggle="pill" href="#pills-tablaLiga" aria-expanded="false" >Copa de la liga Profesional</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="pill" href="#pills-tablaLib" role="button" aria-expanded="false">Libertadores</a>
+                </li>
+                
+              </ul>
+
+              <div class="tab-content " id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-tablaLiga" role="tabpanel" aria-labelledby="pills-tablaLiga-tab">
+                  <div class="row mt-3">
                     
-                  </th>
-                  <th>
-                    Equipos
-                  </th>
-                  <th>
-                    PJ
-                  </th>
-                  <th>
-                    G
-                  </th>
-                  <th>
-                    E
-                  </th>
-                  <th>
-                    P
-                  </th>
-                  <th>
-                    GF
-                  </th>
-                  <th>
-                    GC
-                  </th>
-                  <th>
-                    DIF
-                  </th>
-                  <th>
-                    PTS
-                  </th>
-                  
-                </thead>
-                <tbody>
-                  
-                  {% for e in tabla %}
-                <tr>
+                    <div class="col-md-12 col-sm-12 ">
+                  <table class="table table-sm table-striped ">
 
-                  <td>
-                    {{e.puesto}}
-                  </td>
+                    <thead class="table-dark">
+                     
+                      <th>
+                        #
+                      </th>
+                      <th>
+                        
+                      </th>
+                      <th>
+                        Equipos
+                      </th>
+                      <th>
+                        PJ
+                      </th>
+                      <th>
+                        G
+                      </th>
+                      <th>
+                        E
+                      </th>
+                      <th>
+                        P
+                      </th>
+                      <th>
+                        GF
+                      </th>
+                      <th>
+                        GC
+                      </th>
+                      <th>
+                        DIF
+                      </th>
+                      <th>
+                        PTS
+                      </th>
+                      
+                    </thead>
+                    <tbody>
+                      
+                      {% for e in tabla %}
+                    <tr>
+    
+                      <td>
+                        {{e.puesto}}
+                      </td>
+    
+                      {% for l in e.logo %}
+                      
+                      <td>
+                        <img src="{{l.href}}" alt="" width="20" height="20">
+                      </td>
+                      
+                      {% if e.name == 'Vélez Sarsfield' %}
+                      <td class="text-primary text-start ">
+                    <strong>{{e.name}}</strong>
+                      </td>
+                      {% else %}
+                      <td class="text-start">
+                      {{e.name}}
+                      </td>
+                      {% endif %}
+                      <td>
+                        {{e.pj.value |floatformat:"0"}}
+                      </td>
+                      
+                      <td>
+                        {{e.g.value|floatformat:"0"}}
+                      </td>
+                      <td>
+                        {{e.e.value|floatformat:"0"}}
+                      </td>
+                      <td>
+                        {{e.p.value|floatformat:"0"}}
+                      </td>
+                      <td>
+                        {{e.gf.value|floatformat:"0"}}
+                      </td>
+                      <td>
+                        {{e.gc.value|floatformat:"0"}}
+                      </td>
+                      <td>
+                        {{e.dif.displayValue|floatformat:"0"}}
+                      </td>
+                      <td>
+                        <strong>{{e.pts.value|floatformat:"0"}}</strong>
+                      </td>
+                    </tr>
+                    {% endfor %}
+                    {% endfor %}
+                  </tbody>
+                  </table>
+                    </div>
+                  </div>
+                  
+                </div>
 
-                  {% for l in e.logo %}
-                  
-                  <td>
-                    <img src="{{l.href}}" alt="" width="20" height="20">
-                  </td>
-                  
-                  {% if e.name == 'Vélez Sarsfield' %}
-                  <td class="text-primary text-start">
-                <strong>{{e.name}}</strong>
-                  </td>
-                  {% else %}
-                  <td class="text-start">
-                  {{e.name}}
-                  </td>
-                  {% endif %}
-                  <td>
-                    {{e.pj.value |floatformat:"0"}}
-                  </td>
-                  
-                  <td>
-                    {{e.g.value|floatformat:"0"}}
-                  </td>
-                  <td>
-                    {{e.e.value|floatformat:"0"}}
-                  </td>
-                  <td>
-                    {{e.p.value|floatformat:"0"}}
-                  </td>
-                  <td>
-                    {{e.gf.value|floatformat:"0"}}
-                  </td>
-                  <td>
-                    {{e.gc.value|floatformat:"0"}}
-                  </td>
-                  <td>
-                    {{e.dif.displayValue|floatformat:"0"}}
-                  </td>
-                  <td>
-                    <strong>{{e.pts.value|floatformat:"0"}}</strong>
-                  </td>
-                </tr>
-                {% endfor %}
-                {% endfor %}
-              </tbody>
-              </table>
+                <div class="tab-pane fade" id="pills-tablaLib" role="tabpanel" aria-labelledby="pills-tablaLib-tab">
+                  <div class="row mt-3">
+                    <div class="col-md-12 col-sm-12 ">
+                  <table class="table table-sm table-striped">
+
+                    <thead class="table-dark">
+                     
+                      <th>
+                        #
+                      </th>
+                      <th>
+                        
+                      </th>
+                      <th>
+                        Equipos
+                      </th>
+                      <th>
+                        PJ
+                      </th>
+                      <th>
+                        G
+                      </th>
+                      <th>
+                        E
+                      </th>
+                      <th>
+                        P
+                      </th>
+                      <th>
+                        GF
+                      </th>
+                      <th>
+                        GC
+                      </th>
+                      <th>
+                        DIF
+                      </th>
+                      <th>
+                        PTS
+                      </th>
+                      
+                    </thead>
+                    <tbody>
+                      
+                      {% for e in tablaLibertadores %}
+                    <tr>
+    
+                      <td>
+                        {{e.puesto}}
+                      </td>
+    
+                      {% for l in e.logo %}
+                      
+                      <td>
+                        <img src="{{l.href}}" alt="" width="20" height="20">
+                      </td>
+                      
+                      {% if e.name == 'Vélez Sarsfield' %}
+                      <td class="text-primary text-start ">
+                    <strong>{{e.name}}</strong>
+                      </td>
+                      {% else %}
+                      <td class="text-start">
+                      {{e.name}}
+                      </td>
+                      {% endif %}
+                      <td>
+                        {{e.pj.value |floatformat:"0"}}
+                      </td>
+                      
+                      <td>
+                        {{e.g.value|floatformat:"0"}}
+                      </td>
+                      <td>
+                        {{e.e.value|floatformat:"0"}}
+                      </td>
+                      <td>
+                        {{e.p.value|floatformat:"0"}}
+                      </td>
+                      <td>
+                        {{e.gf.value|floatformat:"0"}}
+                      </td>
+                      <td>
+                        {{e.gc.value|floatformat:"0"}}
+                      </td>
+                      <td>
+                        {{e.dif.displayValue|floatformat:"0"}}
+                      </td>
+                      <td>
+                        <strong>{{e.pts.value|floatformat:"0"}}</strong>
+                      </td>
+                    </tr>
+                    {% endfor %}
+                    {% endfor %}
+                  </tbody>
+                  </table>
+                </div>
+                </div>
+                </div>
+                
+              </div>
+
+              
              
             </div>
           </div>
@@ -420,7 +621,7 @@
                       <span>{{r.dia}} {{r.fecha}}</span>
                     </div> 
                     
-                    <div class="col-md-4 col-sm-4 ">
+                    <div class="col-md-4 col-sm-4 text-left">
                       
                       
                       
@@ -431,7 +632,7 @@
                       <strong>{{r.score1 |floatformat:"0"}}</strong> - <strong>{{r.score2 |floatformat:"0"}}</strong>
                     </div>
 
-                    <div class="col-md-4 col-sm-4  ">
+                    <div class="col-md-4 col-sm-4 text-right">
                       
                     <span>{{r.equipo2}}</span><img src="{{r.logo2.href}}" alt="" width="20" height="20"> 
                     </div>
@@ -458,7 +659,6 @@
                       <img src="{{c.logo1.href}}" alt="" width="20" height="20"> <span>{{c.equipo1}}</span>
                     </div>
 
-                       
 
                     <div class="col-md-4 col-sm-4  ">
                       
@@ -548,6 +748,7 @@
                 </li>
                 
               </ul>
+
               <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-goles" role="tabpanel" aria-labelledby="pills-goles-tab">
                   <table class="table table-sm table-light table-striped mt-3">
@@ -725,41 +926,420 @@
             </div>
           </div>
         </div>
-        <div class="row justify-content-md-center">
+        <div class="row justify-content-md-center mt-3">
           <div class="col-md-8 col-sm-8 col-xs-12">
-    <div id="testimonials" class="testimonials">
+            
+            
+            <ul class="nav nav-pills nav-justified " id="pills-tab" >
+              <li class="nav-item " >
+                <a class="nav-link active"  data-bs-toggle="pill" href="#pills-arquero" aria-expanded="false" >Arqueros</a>
+              </li>
+               <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="pill" href="#pills-defensor"  aria-expanded="false">Defensores</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="pill" href="#pills-medio"  aria-expanded="false">Mediocampistas</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="pill" href="#pills-ataque"  aria-expanded="false">Delanteros</a>
+              </li>
+              
+            </ul>
+            
+            <div class="tab-content" id="pills-tabContent1">
+              <div class="tab-pane fade show active" id="pills-arquero" role="tabpanel" aria-labelledby="pills-arquero-tab">
+              
+              <div class="row justify-content-md-center">
+          
+                {% for e in title.arquero %}
+                <div class="col-md-4 col-sm-4col-xs-12 mt-3">
+                  
+                  
+                      <div class="card">
+                        <div class="card-body text-center">
+                        <div class="contenedor">
+                    <img src="{% static 'img/camiseta.jpg' %}" alt="" width="50" height="50">
+               
+                    <div class="centrado">{{e.dorsal}}</div>
+                    
+                    </div><br>
+                    <h5 class="card-title">{{e.nombre}}</h5>
+                    <label for="">Nacionalidad: {{e.nac}}</label><br>
+                    <label for="">Edad: {{e.edad}}</label><br>
+                    <label for="">Peso: {{e.peso}}</label><br>
+                    <label for="">Altura: {{e.altura}}</label>
+                    
+                        </div>
+                      </div>
+                      </div>
+                      {% endfor %}
+                        </div>
+                    
+            </div>
+              
+              <!-- <table class="table table-sm table-striped mt-3">
+
+                <thead class="table-dark">
+                 
+                  
+                  <th>
+                    Nombre
+                  </th>
+                  <th>
+                    Pos
+                  </th>
+                  <th>
+                    Edad
+                  </th>
+                  <th>
+                   Est
+                  </th>
+                  <th>
+                    P
+                  </th>
+                  <th>
+                    Nac
+                  </th>
+                </thead>
+                <tbody>
+                  
+                  {% for e in title.arquero %}
+                <tr>
+
+                  <td>
+                    {{e.nombre}}
+                  </td>
+
+                  
+                  <td>
+                    {{e.pos}}
+                  </td>
+
+                  <td>
+                    {{e.edad |floatformat:"0"}}
+                  </td>
+                  
+                  <td>
+                    {{e.altura }}
+                  </td>
+                  
+                  
+                  <td>
+                    {{e.peso}}
+                  </td>
+                  
+                  <td>
+                    {{e.nac}}
+                  </td>
+                </tr>
+               
+                {% endfor %}
+              </tbody>
+              </table> -->
+          
+          
+
+          <div class="tab-pane fade" id="pills-defensor" role="tabpanel" aria-labelledby="pills-defensor-tab">
+            <div class="row justify-content-md-center">
+          
+              {% for e in title.defensa %}
+              <div class="col-md-4 col-sm-4 col-xs-12 mt-3">
+                
+                
+                    <div class="card">
+                      <div class="card-body text-center">
+                      <div class="contenedor">
+                  <img src="{% static 'img/camiseta.jpg' %}" alt="" width="50" height="50">
+             
+                  <div class="centrado">{{e.dorsal}}</div>
+                  
+                  </div><br>
+                  <h5 class="card-title">{{e.nombre}}</h5>
+                  <label for="">Nacionalidad: {{e.nac}}</label><br>
+                  <label for="">Edad: {{e.edad}}</label><br>
+                  <label for="">Peso: {{e.peso}}</label><br>
+                  <label for="">Altura: {{e.altura}}</label>
+                  
+                      </div>
+                    </div>
+                    </div>
+                    {% endfor %}
+                      </div>
+           
+            <!-- <table class="table table-sm table-striped mt-3">
+
+              <thead class="table-dark">
+               
+                
+                <th>
+                  Nombre
+                </th>
+                <th>
+                  Pos
+                </th>
+                <th>
+                  Edad
+                </th>
+                <th>
+                 Est
+                </th>
+                <th>
+                  P
+                </th>
+                <th>
+                  Nac
+                </th>
+              </thead>
+              <tbody>
+              
+                {% for e in title.defensa %}
+              <tr>
+
+                <td>
+                  {{e.nombre}}
+                </td>
+
+                
+                <td>
+                  {{e.pos}}
+                </td>
+
+                <td>
+                  {{e.edad |floatformat:"0"}}
+                </td>
+                
+                <td>
+                  {{e.altura }}
+                </td>
+                
+                
+                <td>
+                  {{e.peso}}
+                </td>
+                
+                <td>
+                  {{e.nac}}
+                </td>
+              </tr>
+             
+              {% endfor %}
+            </tbody>
+            </table> -->
+        </div>
+
+        <div class="tab-pane fade" id="pills-medio" role="tabpanel" aria-labelledby="pills-medio-tab">
+          <div class="row justify-content-md-center">
+          
+            {% for e in title.medio %}
+            <div class="col-md-4 col-sm-4 col-xs-12 mt-3">
+              
+              
+                  <div class="card">
+                    <div class="card-body text-center">
+                    <div class="contenedor">
+                <img src="{% static 'img/camiseta.jpg' %}" alt="" width="50" height="50">
+           
+                <div class="centrado">{{e.dorsal}}</div>
+                
+                </div><br>
+                <h5 class="card-title">{{e.nombre}}</h5>
+                <label for="">Nacionalidad: {{e.nac}}</label><br>
+                <label for="">Edad: {{e.edad}}</label><br>
+                <label for="">Peso: {{e.peso}}</label><br>
+                <label for="">Altura: {{e.altura}}</label>
+                
+                    </div>
+                  </div>
+                  </div>
+                  {% endfor %}
+                    </div>
+         
+          <!-- <table class="table table-sm table-striped mt-3">
+
+            <thead class="table-dark">
+             
+              
+              <th>
+                Nombre
+              </th>
+              <th>
+                Pos
+              </th>
+              <th>
+                Edad
+              </th>
+              <th>
+               Est
+              </th>
+              <th>
+                P
+              </th>
+              <th>
+                Nac
+              </th>
+            </thead>
+            <tbody>
+              
+              {% for e in title.medio %}
+            <tr>
+
+              <td>
+                {{e.nombre}}
+              </td>
+
+              
+              <td>
+                {{e.pos}}
+              </td>
+
+              <td>
+                {{e.edad |floatformat:"0"}}
+              </td>
+              
+              <td>
+                {{e.altura }}
+              </td>
+              
+              
+              <td>
+                {{e.peso}}
+              </td>
+              
+              <td>
+                {{e.nac}}
+              </td>
+            </tr>
+           
+            {% endfor %}
+          </tbody>
+          </table> -->
+      </div>
+
+      <div class="tab-pane fade" id="pills-ataque" role="tabpanel" aria-labelledby="pills-ataque-tab">
+        
+        <div class="row justify-content-md-center">
+          
+          {% for e in title.ataque %}
+          <div class="col-md-4 col-sm-4 col-xs-12 mt-3">
+            
+            
+                <div class="card">
+                  <div class="card-body text-center">
+                  <div class="contenedor">
+              <img src="{% static 'img/camiseta.jpg' %}" alt="" width="50" height="50">
+         
+              <div class="centrado">{{e.dorsal}}</div>
+              
+              </div><br>
+              <h5 class="card-title">{{e.nombre}}</h5>
+              <label for="">Nacionalidad: {{e.nac}}</label><br>
+              <label for="">Edad: {{e.edad}}</label><br>
+              <label for="">Peso: {{e.peso}}</label><br>
+              <label for="">Altura: {{e.altura}}</label>
+              
+                  </div>
+                </div>
+                </div>
+                {% endfor %}
+                  </div>
+
+        <!-- <table class="table table-sm table-striped mt-3">
+
+          <thead class="table-dark">
+           
+            
+            <th>
+              Nombre
+            </th>
+            <th>
+              Pos
+            </th>
+            <th>
+              Edad
+            </th>
+            <th>
+             Est
+            </th>
+            <th>
+              P
+            </th>
+            <th>
+              Nac
+            </th>
+          </thead>
+          <tbody>
+            
+            {% for e in title.ataque %}
+          <tr>
+
+            <td>
+              {{e.nombre}}
+            </td>
+
+            
+            <td>
+              {{e.pos}}
+            </td>
+
+            <td>
+              {{e.edad |floatformat:"0"}}
+            </td>
+            
+            <td>
+              {{e.altura }}
+            </td>
+            
+            
+            <td>
+              {{e.peso}}
+            </td>
+            
+            <td>
+              {{e.nac}}
+            </td>
+          </tr>
+         
+          {% endfor %}
+        </tbody>
+        </table> -->
+    </div>
+  </div>
+    <!-- <div id="testimonials" class="testimonials">
  
   
           <div class="testimonials-slider swiper">
             <div class="swiper-wrapper">
               
-              {% for p in title %}
+              {% for key, value in title.items %}
+            
               
-              {{ i|add:2}}
-              <p>{{i}}</p>
               <div class="swiper-slide">
                 
                 
     
                 <div class="testimonial-item">
                   
-                    <div class="row">
-                    <div class=" col">
-                      <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                        <div class="team-img">
-                          <a href="#">
-                            <img src="{{p.image}}" alt="" width="200" height="200" />
-                          </a>
+                  <div class="row justify-content-md-center">
+          
+                    {% for e in value %}
+                    <div class="col-md-8 col-sm-8 col-xs-12">
+                      
+                      
+                          <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                            <div class="contenedor">
+                        <img src="{% static 'img/camiseta.jpg' %}" alt="" width="50" height="50">
+                   
+                        <div class="centrado">{{e.peso}}</div>
+                        
                         </div>
-                        <div class="team-content text-center">
-                          <h4>{{p.name}}</h4>
-                          <p>{{p.extensions}}</p>
-                        </div>
-                        </div>
-                      </div>
-                      </div>
-                        </div>
+                        <h5 class="card-title">{{e.nombre}}</h5>
+                            </div>
+                          </div>
+                          </div>
+                          {% endfor %}
+                            </div>
                         
                 </div>
                 
@@ -775,7 +1355,7 @@
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
           </div>
-      </div>
+      </div> -->
         </div>
         </div>
       </div>
@@ -787,6 +1367,7 @@
             <div class="section-headline text-center">
               <h2>Titulos</h2>
             </div>
+            <div class="row  mt-3">
             <div class="col-md-4 col-sm-4 col-xs-12 text-center">
             <img src="{% static 'img/titLiga.jpg' %}" alt="" >
           </div>
@@ -796,9 +1377,12 @@
           <div class="col-md-4 col-sm-4 col-xs-12 text-center">
             <img src="{% static 'img/titInt.jpg' %}" alt="" >
           </div>
+        </div>
           </div>
         </div>
       </div>
+
+
   </main><!-- End #main -->
 
     <div class="footer-area-bottom">
@@ -806,9 +1390,9 @@
         <div class="row">
           <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="copyright text-center">
-              <p>
+              <!-- <p>
                 &copy; Copyright <strong>eBusiness</strong>. All Rights Reserved
-              </p>
+              </p> -->
             </div>
             <div class="credits">
               <!--
@@ -817,7 +1401,7 @@
               Licensing information: https://bootstrapmade.com/license/
               Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eBusiness
             -->
-              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+              Designed by Mauro Campani
             </div>
           </div>
         </div>
@@ -826,7 +1410,7 @@
   </footer><!-- End  Footer -->
 
   <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="{% bs_icon 'arrow-up-square' size='1.5em' %}"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="fas fa-angle-up"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>

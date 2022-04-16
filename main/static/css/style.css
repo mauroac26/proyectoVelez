@@ -126,7 +126,7 @@ body {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: #3955f8;
+  background: #3f4046;
   width: 40px;
   height: 40px;
   transition: all 0.4s;
@@ -137,7 +137,7 @@ body {
   line-height: 0;
 }
 .back-to-top:hover {
-  background: #3955f8;
+  background: #0d0e11;
   color: #ffffff;
 }
 .back-to-top.active {
@@ -237,24 +237,32 @@ div#preloader {
   background: rgba(0, 0, 0, 0.8);
   height: 64px;
 }
+
+
 #header .logo h1 {
   font-size: 36px;
-  margin: 0;
+  margin-left: 50px;
+  margin-top: 5px;
   padding: 0;
   line-height: 1;
   font-weight: bold;
+  color: #fff;
+
 }
 #header .logo h1 span {
   color: #3ec1d5;
+  
 }
 #header .logo h1 a, #header .logo h1 a:hover {
-  color: #fff;
+  color: rgb(250, 242, 242);
   text-decoration: none;
+  
 }
 #header .logo img {
   padding: 0;
   margin: 0;
   max-height: 40px;
+  float: left;
 }
 @media (max-width: 768px) {
   #header {
@@ -425,14 +433,16 @@ div#preloader {
   bottom: 15px;
   left: 15px;
   padding: 10px 0;
-  background-color: #fff;
+  opacity: 0.8;
   overflow-y: auto;
   transition: 0.3s;
+  background-color: #333;
+  width: 150px;
 }
 .navbar-mobile a, .navbar-mobile a:focus {
   padding: 10px 20px;
   font-size: 15px;
-  color: #0d2529;
+  color: #f3f6f7;
 }
 .navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
   color: #3ec1d5;
@@ -1208,13 +1218,12 @@ div#preloader {
 # Testimonials
 --------------------------------------------------------------*/
 
-.testimonials {
+/* .testimonials {
   padding: 50px 0;
-  /* background: url("../img/background/slider-bg.jpg") no-repeat; */
   background-position: center center;
   background-size: cover;
   position: relative;
-  /* width: 50%; */
+
 }
 .testimonials::before {
   content: "";
@@ -1223,7 +1232,6 @@ div#preloader {
   right: 0;
   top: 0;
   bottom: 0;
-  /* background: rgba(0, 0, 0, 0.7); */
 }
 .testimonials .testimonials-carousel, .testimonials .testimonials-slider {
   overflow: hidden;
@@ -1293,6 +1301,58 @@ div#preloader {
   .testimonials .testimonial-item p {
     width: 80%;
   }
+} */
+
+
+/* Testimonials Section
+--------------------------------*/
+#testimonials {
+  background: #f6f6f6;
+  padding: 80px 0;
+}
+#testimonials .profile {
+  text-align: center;
+}
+#testimonials .profile .pic {
+  border-radius: 50%;
+  border: 6px solid #fff;
+  margin-bottom: 15px;
+  overflow: hidden;
+  height: 260px;
+  width: 260px;
+}
+#testimonials .profile .pic img {
+  max-width: 100%;
+}
+#testimonials .profile h4 {
+  font-weight: 700;
+  color: #03C4EB;
+  margin-bottom: 5px;
+}
+#testimonials .profile span {
+  color: #333333;
+}
+#testimonials .quote {
+  position: relative;
+  background: #fff;
+  padding: 60px;
+  margin-top: 40px;
+  font-size: 16px;
+  font-style: italic;
+  border-radius: 5px;
+}
+#testimonials .quote b {
+  display: inline-block;
+  font-size: 22px;
+  left: -9px;
+  position: relative;
+  top: -8px;
+}
+#testimonials .quote small {
+  display: inline-block;
+  right: -9px;
+  position: relative;
+  top: 4px;
 }
 
 /*--------------------------------------------------------------
@@ -2436,3 +2496,30 @@ span.email-notes {
     padding: 0;
   }
 }
+
+
+.contenedor{
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.texto-encima{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.centrado{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+}
+
+.nav-pills .nav-link.active,
+.show>.nav-pills .nav-link{
+    background: transparent;
+    color: black;
+    border-bottom: 2px solid rgb(31, 7, 247);
+}
+

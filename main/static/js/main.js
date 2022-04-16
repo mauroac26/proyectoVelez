@@ -223,12 +223,12 @@
   cardsEffect: {
     slideShadows: false,
   },
-    speed: 800,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
+  // speed: 800,
+  // loop: true,
+  // autoplay: {
+  //   delay: 5000,
+  //   disableOnInteraction: false
+  // },
     slidesPerView: 'auto',
     pagination: {
       el: '.swiper-pagination',
