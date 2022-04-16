@@ -375,7 +375,11 @@
 
               <ul class="nav nav-pills nav-justified " id="pills-tab-fixture" >
                 <li class="nav-item " >
+<<<<<<< HEAD
                   <a class="nav-link active"  data-bs-toggle="pill" href="#pills-tablaLiga" aria-expanded="false" >Copa de la liga Profesional</a>
+=======
+                  <a class="nav-link active"  data-bs-toggle="pill" href="#pills-tablaLiga" aria-expanded="false" >Copa de la liga Profecional</a>
+>>>>>>> 23e1162a755642b249fe9b62b61e2cc67ddb3a3b
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" data-bs-toggle="pill" href="#pills-tablaLib" role="button" aria-expanded="false">Libertadores</a>
@@ -930,6 +934,7 @@
           <div class="col-md-8 col-sm-8 col-xs-12">
             
             
+<<<<<<< HEAD
             <ul class="nav nav-pills nav-justified " id="pills-tab" >
               <li class="nav-item " >
                 <a class="nav-link active"  data-bs-toggle="pill" href="#pills-arquero" aria-expanded="false" >Arqueros</a>
@@ -943,11 +948,27 @@
 
               <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="pill" href="#pills-ataque"  aria-expanded="false">Delanteros</a>
+=======
+            <!-- <ul class="nav nav-pills nav-justified " id="pills-player" >
+              <li class="nav-item " >
+                <a class="nav-link active"  data-bs-toggle="pill" href="#pills-arquero" aria-expanded="false" >Arqueros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="pill" href="#pills-defensor" role="button" aria-expanded="false">Defensores</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="pill" href="#pills-medio" role="button" aria-expanded="false">Mediocampistas</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="pill" href="#pills-ataque" role="button" aria-expanded="false">Delanteros</a>
+>>>>>>> 23e1162a755642b249fe9b62b61e2cc67ddb3a3b
               </li>
               
             </ul>
             
             <div class="tab-content" id="pills-tabContent1">
+<<<<<<< HEAD
               <div class="tab-pane fade show active" id="pills-arquero" role="tabpanel" aria-labelledby="pills-arquero-tab">
               
               <div class="row justify-content-md-center">
@@ -979,6 +1000,10 @@
             </div>
               
               <!-- <table class="table table-sm table-striped mt-3">
+=======
+            <div class="tab-pane fade" id="pills-arquero" role="tabpanel" aria-labelledby="pills-arquero-tab">
+              <table class="table table-sm table-striped mt-3">
+>>>>>>> 23e1162a755642b249fe9b62b61e2cc67ddb3a3b
 
                 <thead class="table-dark">
                  
@@ -1036,6 +1061,7 @@
                
                 {% endfor %}
               </tbody>
+<<<<<<< HEAD
               </table> -->
           
           
@@ -1068,6 +1094,14 @@
                       </div>
            
             <!-- <table class="table table-sm table-striped mt-3">
+=======
+              </table>
+          </div>
+          
+
+          <div class="tab-pane fade" id="pills-defensor" role="tabpanel" aria-labelledby="pills-defensor-tab">
+            <table class="table table-sm table-striped mt-3">
+>>>>>>> 23e1162a755642b249fe9b62b61e2cc67ddb3a3b
 
               <thead class="table-dark">
                
@@ -1092,7 +1126,11 @@
                 </th>
               </thead>
               <tbody>
+<<<<<<< HEAD
               
+=======
+                
+>>>>>>> 23e1162a755642b249fe9b62b61e2cc67ddb3a3b
                 {% for e in title.defensa %}
               <tr>
 
@@ -1125,6 +1163,7 @@
              
               {% endfor %}
             </tbody>
+<<<<<<< HEAD
             </table> -->
         </div>
 
@@ -1156,6 +1195,13 @@
                     </div>
          
           <!-- <table class="table table-sm table-striped mt-3">
+=======
+            </table>
+        </div>
+
+        <div class="tab-pane fade" id="pills-medio" role="tabpanel" aria-labelledby="pills-medio-tab">
+          <table class="table table-sm table-striped mt-3">
+>>>>>>> 23e1162a755642b249fe9b62b61e2cc67ddb3a3b
 
             <thead class="table-dark">
              
@@ -1213,6 +1259,7 @@
            
             {% endfor %}
           </tbody>
+<<<<<<< HEAD
           </table> -->
       </div>
 
@@ -1245,6 +1292,13 @@
                   </div>
 
         <!-- <table class="table table-sm table-striped mt-3">
+=======
+          </table>
+      </div>
+
+      <div class="tab-pane fade" id="pills-ataque" role="tabpanel" aria-labelledby="pills-ataque-tab">
+        <table class="table table-sm table-striped mt-3">
+>>>>>>> 23e1162a755642b249fe9b62b61e2cc67ddb3a3b
 
           <thead class="table-dark">
            
@@ -1302,18 +1356,31 @@
          
           {% endfor %}
         </tbody>
+<<<<<<< HEAD
         </table> -->
     </div>
   </div>
     <!-- <div id="testimonials" class="testimonials">
+=======
+        </table>
+    </div>
+  </div> -->
+    <div id="testimonials" class="testimonials">
+>>>>>>> 23e1162a755642b249fe9b62b61e2cc67ddb3a3b
  
   
           <div class="testimonials-slider swiper">
             <div class="swiper-wrapper">
               
+<<<<<<< HEAD
               {% for key, value in title.items %}
             
               
+=======
+              {% for p in title %}
+            
+             
+>>>>>>> 23e1162a755642b249fe9b62b61e2cc67ddb3a3b
               <div class="swiper-slide">
                 
                 
@@ -1322,8 +1389,13 @@
                   
                   <div class="row justify-content-md-center">
           
+<<<<<<< HEAD
                     {% for e in value %}
                     <div class="col-md-8 col-sm-8 col-xs-12">
+=======
+                    {% for e in title.arquero %}
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+>>>>>>> 23e1162a755642b249fe9b62b61e2cc67ddb3a3b
                       
                       
                           <div class="card" style="width: 18rem;">
@@ -1332,9 +1404,14 @@
                         <img src="{% static 'img/camiseta.jpg' %}" alt="" width="50" height="50">
                    
                         <div class="centrado">{{e.peso}}</div>
+<<<<<<< HEAD
                         
                         </div>
                         <h5 class="card-title">{{e.nombre}}</h5>
+=======
+                        </div>
+                            
+>>>>>>> 23e1162a755642b249fe9b62b61e2cc67ddb3a3b
                             </div>
                           </div>
                           </div>
@@ -1378,7 +1455,21 @@
             <img src="{% static 'img/titInt.jpg' %}" alt="" >
           </div>
         </div>
+<<<<<<< HEAD
+=======
           </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="contenedor">
+            <img src="{% static 'img/camiseta.jpg' %}" alt="" width="50" height="50">
+         
+            <div class="centrado">22</div>
+>>>>>>> 23e1162a755642b249fe9b62b61e2cc67ddb3a3b
+          </div>
+          
         </div>
       </div>
 
