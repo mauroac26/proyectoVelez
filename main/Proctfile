@@ -1,1 +1,1 @@
-web: gunicorn proyectoVelez.wsgi --log-files -
+web: gunicorn proyectoVelez.wsgi 
