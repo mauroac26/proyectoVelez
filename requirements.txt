@@ -20,10 +20,7 @@ html5lib==1.1
 idna==3.3
 importlib-metadata==4.8.2
 importlib-resources==5.4.0
-mysqlclient==2.0.3
 numpy==1.19.5
-panda==0.3.1
-pandas==0.25.3
 Pillow==8.4.0
 platformdirs==2.4.0
 psycopg2==2.9.1
@@ -40,5 +37,4 @@ urllib3==1.26.7
 virtualenv==20.10.0
 webencodings==0.5.1
 whitenoise==6.2.0
-xhtml2pdf==0.2.5
 zipp==3.6.0
