@@ -26,7 +26,7 @@ def generate_request(url, params={}):
 
 def get_username(params={}):
     
-    response = generate_request('https://site.web.api.espn.com/apis/site/v2/sports/soccer/ARG.COPA_LPF/teams/21/roster?region=ar&lang=es&contentorigin=deportes&limit=99', params)
+    response = generate_request('https://site.web.api.espn.com/apis/site/v2/sports/soccer/ARG.1/teams/21/roster?region=ar&lang=es&contentorigin=deportes&limit=99&sort=jersey%3Aasc', params)
     player = {}
 
     if response:
@@ -257,7 +257,7 @@ def calendario(params={}):
 #     return datos
   
 def tabla(params={}):
-    response = generate_request('https://site.web.api.espn.com/apis/v2/sports/soccer/arg.copa_lpf/standings?region=ar&lang=es&contentorigin=deportes&season=2022&sort=rank%3Aasc', params)
+    response = generate_request('https://site.web.api.espn.com/apis/v2/sports/soccer/ARG.1/standings?region=ar&lang=es&contentorigin=deportes&season=2022&sort=rank%3Aasc', params)
                                
     if response:
         
@@ -266,29 +266,28 @@ def tabla(params={}):
         datos = list() 
         for t in fixture:
         
-            if t['id'] == "2":
-                #return  t['standings']['entries']
-                for s in t['standings']['entries']:
             
-                    tablaProsiciones = {}
-                    tablaProsiciones['puesto'] = i
-                    tablaProsiciones['logo'] = s['team']['logos']
-                    tablaProsiciones['name'] = s['team']['name']
-                    tablaProsiciones['pj'] = s['stats'][3]
-                    tablaProsiciones['g'] = s['stats'][0]
-                    tablaProsiciones['e'] = s['stats'][2]
-                    tablaProsiciones['p'] = s['stats'][1]
-                    tablaProsiciones['gf'] = s['stats'][4]
-                    tablaProsiciones['gc'] = s['stats'][5]
-                    tablaProsiciones['dif'] = s['stats'][9]
-                    tablaProsiciones['pts'] = s['stats'][6]
+            for s in t['standings']['entries']:
+            
+                tablaProsiciones = {}
+                tablaProsiciones['puesto'] = i
+                tablaProsiciones['logo'] = s['team']['logos']
+                tablaProsiciones['name'] = s['team']['name']
+                tablaProsiciones['pj'] = s['stats'][3]
+                tablaProsiciones['g'] = s['stats'][0]
+                tablaProsiciones['e'] = s['stats'][2]
+                tablaProsiciones['p'] = s['stats'][1]
+                tablaProsiciones['gf'] = s['stats'][4]
+                tablaProsiciones['gc'] = s['stats'][5]
+                tablaProsiciones['dif'] = s['stats'][9]
+                tablaProsiciones['pts'] = s['stats'][6]
 
-                    datos.append(tablaProsiciones)
+                datos.append(tablaProsiciones)
 
-                    i +=1
+                i +=1
 
                     
-                return datos
+            return datos
     
     return ''
 
@@ -329,7 +328,7 @@ def tablaLibertadores(params={}):
     return ''
 
 def goles(params={}):
-    response = generate_request('https://site.web.api.espn.com/apis/site/v2/sports/soccer/ARG.COPA_LPF/teams/21/statistics?region=ar&lang=es&contentorigin=deportes&level=1', params)
+    response = generate_request('https://site.web.api.espn.com/apis/site/v2/sports/soccer/ARG.1/teams/21/statistics?region=ar&lang=es&contentorigin=deportes&level=1', params)
     
     if response:
         
@@ -384,7 +383,7 @@ def goles(params={}):
 
 
 def tarjetas(params={}):
-    response = generate_request('https://site.web.api.espn.com/apis/site/v2/sports/soccer/ARG.COPA_LPF/teams/21/statistics?region=ar&lang=es&contentorigin=deportes&level=2', params)
+    response = generate_request('https://site.web.api.espn.com/apis/site/v2/sports/soccer/ARG.1/teams/21/statistics?region=ar&lang=es&contentorigin=deportes&level=2', params)
     
     if response:
         
