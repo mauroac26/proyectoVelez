@@ -33,6 +33,10 @@
   <!-- Template Main CSS File -->
   <link href="{% static 'css/style.css' %}" rel="stylesheet">
 
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.dataTables.min.css">
   <!-- =======================================================
   * Template Name: eBusiness - v4.7.0
   * Template URL: https://bootstrapmade.com/ebusiness-bootstrap-corporate-template/
@@ -267,7 +271,7 @@
           
 
           <!-- TABLA DE POSICIONES -->
-          <div class="col-md-8 col-sm-8 col-xs-12">
+          <div class="col-md-10 col-sm-10 col-xs-12">
             <div class="pri_table_list">
               <h3>Tabla de posiciones</h3>
               <!-- <div><h6>Copa de la liga Profesional</h6></div> -->
@@ -291,7 +295,7 @@
                   <div class="row mt-3">
                     
                     <div class="col-md-12 col-sm-12 ">
-                  <table class="table table-sm table-striped ">
+                  <table class="table table-sm table-striped " id="tablaResultado">
 
                     <thead class="table-dark">
                      
@@ -500,7 +504,7 @@
            <!-- RESULTADOS -->
           <div class="row justify-content-md-center mt-4">
          
-          <div class="col-md-8 col-sm-8 col-xs-12">
+          <div class="col-md-10 col-sm-10 col-xs-12">
         
             <div class="pri_table_list">
               
@@ -631,7 +635,7 @@
 
         <div class="row justify-content-md-center mt-4 ">
           <!-- ///ESTADISTICAS JUGADORES//// -->
-          <div class="col-md-8 col-sm-8 col-xs-12">
+          <div class="col-md-10 col-sm-10 col-xs-12">
             <div class="pri_table_list">
               
               <h3>Estadistica Jugadores</h3>
@@ -830,7 +834,7 @@
           </div>
         </div>
         <div class="row justify-content-md-center mt-3">
-          <div class="col-md-8 col-sm-8 col-xs-12">
+          <div class="col-md-10 col-sm-10 col-xs-12">
             
             
 
@@ -1047,6 +1051,22 @@
 
   <!-- Template Main JS File -->
   <script src="{% static 'js/main.js' %}"></script>
+<script src=" https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+ <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+ <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    $('#tablaResultado').DataTable({
+      responsive: true,
+      paging: false,
+        ordering: false,
+        info: false,
+        "searching": false
+    });
+});
+</script>
   
   <!-- <script>
     var firstTabEl = document.querySelector('#pills-tab li:last-child a')

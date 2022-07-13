@@ -1,5 +1,1 @@
-# Text backup files
-*.bak
-
-#Database
-*.mysql
+asd
