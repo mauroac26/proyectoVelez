@@ -1214,9 +1214,12 @@ div#preloader {
   transition: 0.4s;
 }
 
-table td{
-  font-size: 11px;
+@media (min-width: 700px) {
+  table td{
+    font-size: 11px;
+  }
 }
+
 /*--------------------------------------------------------------
 # Testimonials
 --------------------------------------------------------------*/
