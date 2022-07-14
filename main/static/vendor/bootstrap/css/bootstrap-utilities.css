@@ -1243,6 +1243,7 @@
 
 .text-start {
   text-align: left !important;
+  font-size: 8px;
 }
 
 .text-end {
