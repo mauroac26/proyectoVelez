@@ -322,6 +322,10 @@ th {
   border-color: inherit;
   border-style: solid;
   border-width: 0;
+  
+}
+
+td{
   font-size: 12px;
 }
 
