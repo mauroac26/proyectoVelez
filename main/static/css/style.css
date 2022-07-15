@@ -428,16 +428,16 @@ div#preloader {
 .navbar-mobile ul {
   display: block;
   position: relative;
-  top: 100px;
+  top: 50px;
   right: 15px;
   bottom: 15px;
   left: 15px;
-  padding: 10px 0;
+  padding: 50px 0;
   opacity: 0.8;
   overflow-y: auto;
   transition: 0.3s;
   background-color: #333;
-  width: 200px;
+  width: 150px;
 }
 .navbar-mobile a, .navbar-mobile a:focus {
   padding: 10px 20px;
