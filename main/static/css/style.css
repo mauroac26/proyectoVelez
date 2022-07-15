@@ -1219,6 +1219,10 @@ div#preloader {
   table td{
     font-size: 11px;
   }
+
+  #pills-resultados{
+    font-size: 11px;
+  }
 }
 
 /*--------------------------------------------------------------
