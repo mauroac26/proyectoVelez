@@ -1215,9 +1215,9 @@ div#preloader {
   transition: 0.4s;
 }
 
-@media (min-width: 500px) {
+@media (max-width: 600px) {
   table td{
-    font-size: 8px;
+    font-size: 11px;
   }
 }
 
