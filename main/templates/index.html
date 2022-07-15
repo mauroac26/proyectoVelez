@@ -522,7 +522,22 @@
               <div class="tab-content" id="pills-tabContent" style="height:400px; overflow: scroll; overflow-y: scroll;">
                 <div class="tab-pane fade show active" id="pills-resultados" role="tabpanel" aria-labelledby="pills-resultados-tab">
                   {% for r in resultados %}
-                  <div class="row mt-3">
+
+                  <table>
+                    <tr>
+                      <td>{{r.dia}} {{r.fecha}}</td>
+                    </tr>
+                    <tr>
+                      <td><img src="{{r.logo1.href}}" alt="" width="20" height="20">{{r.equipo1}}</td>
+                      <td>
+                        <strong>{{r.score1 |floatformat:"0"}}</strong> - <strong>{{r.score2 |floatformat:"0"}}</strong>
+                      </td>
+                      <td>
+                        {{r.equipo2}}<img src="{{r.logo2.href}}" alt="" width="20" height="20"> 
+                      </td>
+                    </tr>
+                  </table>
+                  <!-- <div class="row mt-3">
                     
                     <div class="col-md-3 col-sm-3 ">
                       <span>{{r.dia}} {{r.fecha}}</span>
@@ -545,7 +560,7 @@
                     </div>
                     
                     
-                  </div>
+                  </div> -->
                  
                   {% endfor %}
                 </div>
