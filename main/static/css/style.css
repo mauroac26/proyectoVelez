@@ -427,7 +427,7 @@ div#preloader {
 }
 .navbar-mobile ul {
   display: block;
-  position: relative;
+  position: fixed;
   top: 50px;
   right: 15px;
   bottom: 15px;
