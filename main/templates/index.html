@@ -530,7 +530,7 @@
                     </tr>
                     <tr class="pt-1">
                       <td style="width: 50px;"  class= "text-center"><img src="{{r.logo1.href}}" alt="" width="20" height="20">{{r.equipo1}}</td>
-                      <td style="width: 30px;"  class="text-center">
+                      <td style="width: 30px;"  class="text-center bg-primary">
                         <strong>{{r.score1 |floatformat:"0"}}</strong> - <strong>{{r.score2 |floatformat:"0"}}</strong>
                       </td>
                       <td style="width: 50px;" class="text-center">
@@ -538,39 +538,30 @@
                       </td>
                     </tr>
                   
-                  <!-- <div class="row mt-3">
-                    
-                    <div class="col-md-3 col-sm-3 ">
-                      <span>{{r.dia}} {{r.fecha}}</span>
-                    </div> 
-                    
-                    <div class="col-md-4 col-sm-4 text-left">
-                      
-                      
-                      
-                      <img src="{{r.logo1.href}}" alt="" width="20" height="20"> <span>{{r.equipo1}}</span>
-                    </div>
 
-                    <div class="col-md-1 col-sm-1  ">
-                      <strong>{{r.score1 |floatformat:"0"}}</strong> - <strong>{{r.score2 |floatformat:"0"}}</strong>
-                    </div>
-
-                    <div class="col-md-4 col-sm-4 text-right">
-                      
-                    <span>{{r.equipo2}}</span><img src="{{r.logo2.href}}" alt="" width="20" height="20"> 
-                    </div>
-                    
-                    
-                  </div> -->
                  
                   {% endfor %}
                 </table>
                 </div>
 
                 <div class="tab-pane fade" id="pills-calendario" role="tabpanel" aria-labelledby="pills-calendario-tab">
-                  
+                  <table class="table table-sm">
                   {% for c in calendario %}
-                  <div class="row mt-3">
+
+                  <tr>
+                    <td style="width: 5px;" colspan="3" class="text-center">{{c.fecha}}</td>
+                  
+                  
+                    <td style="width: 50px;"  class= "text-center"><img src="{{c.logo1.href}}" alt="" width="20" height="20"> {{c.equipo1}}</td>
+                    <td style="width: 5px;"  class= "text-center">vs</td>
+                    <td style="width: 50px;"  class="text-center">
+                      {{c.equipo2}} <img src="{{c.logo2.href}}" alt="" width="20" height="20">
+                    </td>
+                    <td style="width: 20px;" class="text-center">
+                      {{c.liga}} 
+                    </td>
+                  </tr>
+                  <!-- <div class="row mt-3">
                     
                     <div class="col-md-1 col-sm-1">
                       <span>{{c.fecha}}</span>
@@ -595,9 +586,10 @@
                       <span>{{c.liga}}</span>
                     </div>
 
-                  </div>
+                  </div> -->
                  
                   {% endfor %}
+                </table>
                 </div>
                 
               </div>
