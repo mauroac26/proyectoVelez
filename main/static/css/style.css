@@ -1229,9 +1229,9 @@ div#preloader {
     border: 6px solid #fff;
     margin-bottom: 15px;
     overflow: hidden;
-    height: 200px;
-    width: 200px;
-    display: block;
+    height: 100px;
+    width: 100px;
+    /* display: none; */
   }
 
 }
@@ -1343,7 +1343,6 @@ div#preloader {
   overflow: hidden;
   height: 200px;
   width: 200px;
-  display: none;
 }
 #institucion .profile .pic img {
   max-width: 100%;
