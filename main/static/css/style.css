@@ -1232,6 +1232,7 @@ div#preloader {
     overflow: hidden;
     height: 100px;
     width: 100px;
+    text-align: center;
     /* display: none; */
   }
 
