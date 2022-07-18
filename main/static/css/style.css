@@ -1223,6 +1223,17 @@ div#preloader {
   #pills-resultados{
     font-size: 11px;
   }
+
+  #institucion .profile .pic {
+    border-radius: 50%;
+    border: 6px solid #fff;
+    margin-bottom: 15px;
+    overflow: hidden;
+    height: 200px;
+    width: 200px;
+    display: block;
+  }
+
 }
 
 /*--------------------------------------------------------------
@@ -1332,6 +1343,7 @@ div#preloader {
   overflow: hidden;
   height: 200px;
   width: 200px;
+  display: none;
 }
 #institucion .profile .pic img {
   max-width: 100%;
@@ -1340,7 +1352,7 @@ div#preloader {
   font-weight: 700;
   color: #03C4EB;
   margin-bottom: 5px;
-  text-align: left;
+  text-align: center;
 }
 #institucion .profile span {
   color: #333333;
