@@ -1340,6 +1340,7 @@ div#preloader {
   font-weight: 700;
   color: #03C4EB;
   margin-bottom: 5px;
+  text-align: left;
 }
 #institucion .profile span {
   color: #333333;
