@@ -549,15 +549,15 @@
                   {% for c in calendario %}
 
                   <tr>
-                    <td style="width: 5px;" class="text-center">{{c.fecha}}</td>
+                    <td style="width: 5px;" class="text-center bg-info">{{c.fecha}}</td>
                   
                   
-                    <td style="width: 50px;"  class= "text-center"><img src="{{c.logo1.href}}" alt="" width="20" height="20"> {{c.equipo1}}</td>
+                    <td style="width: 50px;"  class= "text-center bg-success" ><img src="{{c.logo1.href}}" alt="" width="20" height="20"> {{c.equipo1}}</td>
                     <td style="width: 3px;"  class= "text-center bg-info">vs</td>
-                    <td style="width: 50px;"  class="text-center">
+                    <td style="width: 50px;"  class="text-center bg-primary">
                       {{c.equipo2}} <img src="{{c.logo2.href}}" alt="" width="20" height="20">
                     </td>
-                    <td style="width: 17px;" class="text-center">
+                    <td style="width: 17px;" class="text-center bg-info">
                       {{c.liga}} 
                     </td>
                   </tr>
