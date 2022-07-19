@@ -1229,11 +1229,10 @@ div#preloader {
     border-radius: 50%;
     border: 6px solid #fff;
     margin-bottom: 15px;
-    overflow: hidden;
     height: 100px;
     width: 100px;
     /* display: none; */
-    align-content: center;
+    text-align: center;
   }
 
   p{
