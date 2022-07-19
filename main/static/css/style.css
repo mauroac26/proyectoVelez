@@ -1218,7 +1218,7 @@ div#preloader {
 
 @media (max-width: 600px) {
   table td{
-    font-size: 11px;
+    font-size: 12px;
   }
 
   #pills-resultados{
@@ -1233,11 +1233,11 @@ div#preloader {
     height: 100px;
     width: 100px;
     /* display: none; */
-    align-items: center;
+    align-content: center;
   }
 
   p{
-    font-size: 12px;
+    font-size: 13px;
   }
 }
 
