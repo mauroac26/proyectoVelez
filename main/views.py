@@ -14,6 +14,7 @@ def index(requests):
         'tarjetas': tarjetas(),
         'calendario': calendario(),
         'tablaLibertadores': tablaLibertadores()
+        #'resultadoLib': resultadosLib()
     }
     
     return render(requests, 'index.html', context)
