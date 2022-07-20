@@ -109,57 +109,41 @@ def resultados(params={}):
     return ''
 
 
-# def resultadosLib(params={}):
-#     response = generate_request('https://site.web.api.espn.com/apis/site/v2/sports/soccer/all/teams/21/schedule?region=ar&lang=es&season=2022', params)
+def resultadosLib(params={}):
+    response = generate_request('https://site.web.api.espn.com/apis/site/v2/sports/soccer/all/teams/21/schedule?region=ar&lang=es&season=2022', params)
     
-#     resultado = list()
+    resultado = list()
 
-#     i = 1
-#     if response:
+    if response:
 
-#         fixture = response['events']
+        fixture = response['events']
         
-#         for c in fixture:
+        for c in fixture:
             
-#             if c['seasonType']['id'] == "5":
-#                 print(c['seasonType']['name'])
-#                 for e in c['competitions']:
-#                     fecha = e['date']
-#                     dia = datetime.datetime.strptime(fecha, '%Y-%m-%dT%H:%MZ').strftime('%A')
-#                     fecha1 = datetime.datetime.strptime(fecha, '%Y-%m-%dT%H:%MZ').strftime("%d-%m-%Y")
-#                     print(fecha1)
-#                     print(dia)
-#                     print(e['leg']['displayValue'])
-#                     print(e['venue']['fullName'])
-#                     print(e['competitors'][0]['team']['displayName'])
-#                     print(e['competitors'][1]['team']['displayName'])
-
-                # if e['id'] == 783:
-                #     print(e['name'])
-                # fecha = e['date']
-                # dia = datetime.datetime.strptime(fecha, '%Y-%m-%dT%H:%MZ').strftime('%A')
-                # fecha1 = datetime.datetime.strptime(fecha, '%Y-%m-%dT%H:%MZ').strftime("%d-%m-%Y")
+            if c['seasonType']['id'] == "5":
+                
+                for e in c['competitions']:
+                    fecha = e['date']
+                    dia = datetime.datetime.strptime(fecha, '%Y-%m-%dT%H:%MZ').strftime('%A')
+                    fecha1 = datetime.datetime.strptime(fecha, '%Y-%m-%dT%H:%MZ').strftime("%d-%m-%Y")
                     
-                    
-                #     #for l in e['competitors']:
+                    tablaProsiciones = {}
+                    tablaProsiciones['dia'] = dia
+                    tablaProsiciones['fecha'] = fecha1
+                    tablaProsiciones['equipo1'] = e['competitors'][0]['team']['displayName']
+                    tablaProsiciones['equipo2'] = e['competitors'][1]['team']['displayName']
+                    tablaProsiciones['logo1'] = e['competitors'][0]['team']['logos'][0]
+                    tablaProsiciones['logo2'] = e['competitors'][1]['team']['logos'][0]
+                    tablaProsiciones['score1'] = e['competitors'][0]['score']['value']
+                    tablaProsiciones['score2'] = e['competitors'][1]['score']['value']
+                    tablaProsiciones['condicion'] = e['leg']['displayValue']
+                    tablaProsiciones['estadio'] = e['venue']['fullName']
                         
-                # tablaProsiciones = {}
-                # tablaProsiciones['dia'] = dia
-                # tablaProsiciones['fecha'] = fecha1
-                # tablaProsiciones['equipo1'] = e['competitors'][0]['team']['displayName']
-                # tablaProsiciones['equipo2'] = e['competitors'][1]['team']['displayName']
-                # tablaProsiciones['logo1'] = e['competitors'][0]['team']['logos'][0]
-                # tablaProsiciones['logo2'] = e['competitors'][1]['team']['logos'][0]
-                # tablaProsiciones['score1'] = e['competitors'][0]['score']['value']
-                # tablaProsiciones['score2'] = e['competitors'][1]['score']['value']
-                    
 
-                # resultado.append(tablaProsiciones)
-                        
-                     
+                    resultado.append(tablaProsiciones)
+                    
          
-    return resultado
-    
+        return resultado
     return ''
 
 

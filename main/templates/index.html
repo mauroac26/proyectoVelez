@@ -491,6 +491,33 @@
                   </table>
                 </div>
                 </div>
+
+                <div class="row mt-3 justify-content-center">
+                  <div class="col-md-6 col-sm-6">
+                    <h5>Octavos de final</h5>
+                    
+                      {% for r in resultadoLib %}
+                      <table class="table table-sm mt-3" style="width:100%;">
+                      <tr >
+                        <td style="width: 100%;" colspan="3" class="text-center bg-secondary text-white" >{{r.dia}} {{r.fecha}}</td>
+                      </tr>
+                      <tr>
+                        <td style="width: 40%;"  class= "text-right"><img src="{{r.logo1.href}}" alt="" width="20" height="20"> {{r.equipo1}}</td>
+                        <td style="width: 20px;"  class="text-center">
+                          <strong>{{r.score1 |floatformat:"0"}}</strong> - <strong>{{r.score2 |floatformat:"0"}}</strong>
+                        </td>
+                        <td style="width: 40px;" class="text-left">
+                          {{r.equipo2}} <img src="{{r.logo2.href}}" alt="" width="20" height="20"> 
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="width: 100%;" colspan="3" class="text-center">{{r.condicion}} - {{r.estadio}}</td>
+                      </tr>
+                    </table>
+                      {% endfor %}
+                    
+                  </div>
+                </div>
                 </div>
                 
               </div>
