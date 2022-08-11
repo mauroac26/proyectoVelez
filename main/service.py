@@ -58,9 +58,9 @@ def jugador(response, posicion):
                 tablaProsiciones['nac'] = n['jersey']
 
                 tablaProsiciones['edad'] = n['age']
-                tablaProsiciones['altura'] = n['displayHeight']
+                #tablaProsiciones['altura'] = n['displayHeight']
                 tablaProsiciones['pos'] = n['position']['abbreviation']
-                tablaProsiciones['peso'] = n['displayWeight']
+                #tablaProsiciones['peso'] = n['displayWeight']
                 tablaProsiciones['nac'] = n['citizenship']
                 resultado.append(tablaProsiciones)
                 
