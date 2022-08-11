@@ -221,7 +221,7 @@ def tabla(params={}):
     return ''
 
 def tablaLibertadores(params={}):
-    response = generate_request('https://site.web.api.espn.com/apis/v2/sports/soccer/conmebol.libertadores/standings?region=ar&lang=es&contentorigin=deportes&sort=rank%3Aasc', params)
+    response = generate_request('https://site.web.api.espn.com/apis/v2/sports/soccer/conmebol.libertadores/standings?region=ar&lang=es&contentorigin=deportes&season=2020&sort=rank%3Aasc', params)
                                 
     if response:
         
