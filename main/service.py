@@ -120,7 +120,7 @@ def resultadosLib(params={}):
         
         for c in fixture:
             
-            if c['seasonType']['id'] == "5":
+            if c['seasonType']['id'] == "5" or c['seasonType']['id'] == "6":
                 
                 for e in c['competitions']:
                     fecha = e['date']
@@ -130,6 +130,7 @@ def resultadosLib(params={}):
                     tablaProsiciones = {}
                     tablaProsiciones['dia'] = dia
                     tablaProsiciones['fecha'] = fecha1
+                    
                     tablaProsiciones['equipo1'] = e['competitors'][0]['team']['displayName']
                     tablaProsiciones['equipo2'] = e['competitors'][1]['team']['displayName']
                     tablaProsiciones['logo1'] = e['competitors'][0]['team']['logos'][0]
@@ -221,7 +222,7 @@ def tabla(params={}):
     return ''
 
 def tablaLibertadores(params={}):
-    response = generate_request('https://site.web.api.espn.com/apis/v2/sports/soccer/conmebol.libertadores/standings?region=ar&lang=es&contentorigin=deportes&season=2020&sort=rank%3Aasc', params)
+    response = generate_request('https://site.web.api.espn.com/apis/v2/sports/soccer/conmebol.libertadores/standings?region=ar&lang=es&contentorigin=deportes&season=2022&sort=rank%3Aasc', params)
                                 
     if response:
         
