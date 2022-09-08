@@ -491,11 +491,11 @@
                   </table>
                 </div>
                 </div>
-
+                {% if resultadoLib %}
                 <div class="row mt-3 justify-content-center">
                   
                     
-                    
+                  
                       {% for r in resultadoLib %}
                       <!-- <h5>{{r.fase}}</h5> -->
                       <div class="col-md-6 col-sm-6">
@@ -517,11 +517,21 @@
                         <td style="width: 100%;" colspan="3" class="text-center">{{r.condicion}} - {{r.estadio}}</td>
                       </tr>
                     </table>
+                  
                   </div>
                       {% endfor %}
                     
                   
                 </div>
+                {% else %}
+                <div class="row mt-5 justify-content-md-center">
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="alert alert-danger" role="alert">
+                  Error en el servidor!!!
+                </div>
+              </div>
+              </div>
+                {% endif %}
                 </div>
                 
               </div>
@@ -552,7 +562,9 @@
               </ul>
               <div class="tab-content" id="pills-tabContent" style="height:400px; overflow: scroll; overflow-y: scroll;">
                 <div class="tab-pane fade show active" id="pills-resultados" role="tabpanel" aria-labelledby="pills-resultados-tab">
+                  {% if resultados %}
                   <table class="table table-sm mt-3">
+                    
                   {% for r in resultados %}
 
                   
@@ -573,6 +585,15 @@
                  
                   {% endfor %}
                 </table>
+                {% else %}
+                <div class="row mt-5 justify-content-md-center">
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="alert alert-danger" role="alert">
+                  Error en el servidor!!!
+                </div>
+              </div>
+              </div>
+                {% endif %}
                 </div>
 
                 <div class="tab-pane fade" id="pills-calendario" role="tabpanel" aria-labelledby="pills-calendario-tab">
