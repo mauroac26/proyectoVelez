@@ -49,7 +49,7 @@ def jugador(response, posicion):
        
         for n in equipos:
             
-            if n['position']['displayName']:
+            if n['position']['displayName'] == posicion:
                 
                 tablaProsiciones = {}
                 tablaProsiciones['nombre'] = n['fullName']
