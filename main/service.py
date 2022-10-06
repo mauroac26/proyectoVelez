@@ -193,26 +193,27 @@ def tabla(params={}):
     if response:
         
         fixture = response['children']
+        print(fixture)
         i = 1
         datos = list() 
         for t in fixture:
         
             
             for s in t['standings']['entries']:
-            
+               
                 tablaProsiciones = {}
                 tablaProsiciones['puesto'] = i
                 tablaProsiciones['logo'] = s['team']['logos']
                 tablaProsiciones['name'] = s['team']['name']
-                tablaProsiciones['pj'] = s['stats'][3]
-                tablaProsiciones['g'] = s['stats'][0]
-                tablaProsiciones['e'] = s['stats'][2]
+                tablaProsiciones['pj'] = s['stats'][0]
+                tablaProsiciones['g'] = s['stats'][6]
+                tablaProsiciones['e'] = s['stats'][5]
                 tablaProsiciones['p'] = s['stats'][1]
                 tablaProsiciones['gf'] = s['stats'][4]
-                tablaProsiciones['gc'] = s['stats'][5]
-                tablaProsiciones['dif'] = s['stats'][9]
-                tablaProsiciones['pts'] = s['stats'][6]
-
+                tablaProsiciones['gc'] = s['stats'][3]
+                tablaProsiciones['dif'] = s['stats'][8]
+                tablaProsiciones['pts'] = s['stats'][2]
+                
                 datos.append(tablaProsiciones)
 
                 i +=1
