@@ -50,17 +50,18 @@ def jugador(response, posicion):
         for n in equipos:
             
             if n['position']['displayName'] == posicion:
+                
                 tablaProsiciones = {}
                 tablaProsiciones['nombre'] = n['fullName']
 
                 tablaProsiciones['dorsal'] = n['jersey']
 
-                tablaProsiciones['nac'] = n['jersey']
+                # tablaProsiciones['nac'] = n['jersey']
 
                 tablaProsiciones['edad'] = n['age']
-                tablaProsiciones['altura'] = n['displayHeight']
+                #tablaProsiciones['altura'] = n['displayHeight']
                 tablaProsiciones['pos'] = n['position']['abbreviation']
-                tablaProsiciones['peso'] = n['displayWeight']
+                #tablaProsiciones['peso'] = n['displayWeight']
                 tablaProsiciones['nac'] = n['citizenship']
                 resultado.append(tablaProsiciones)
                 
@@ -109,57 +110,42 @@ def resultados(params={}):
     return ''
 
 
-# def resultadosLib(params={}):
-#     response = generate_request('https://site.web.api.espn.com/apis/site/v2/sports/soccer/all/teams/21/schedule?region=ar&lang=es&season=2022', params)
+def resultadosLib(params={}):
+    response = generate_request('https://site.web.api.espn.com/apis/site/v2/sports/soccer/all/teams/21/schedule?region=ar&lang=es&season=2022', params)
     
-#     resultado = list()
+    resultado = list()
 
-#     i = 1
-#     if response:
+    if response:
 
-#         fixture = response['events']
+        fixture = response['events']
         
-#         for c in fixture:
+        for c in fixture:
             
-#             if c['seasonType']['id'] == "5":
-#                 print(c['seasonType']['name'])
-#                 for e in c['competitions']:
-#                     fecha = e['date']
-#                     dia = datetime.datetime.strptime(fecha, '%Y-%m-%dT%H:%MZ').strftime('%A')
-#                     fecha1 = datetime.datetime.strptime(fecha, '%Y-%m-%dT%H:%MZ').strftime("%d-%m-%Y")
-#                     print(fecha1)
-#                     print(dia)
-#                     print(e['leg']['displayValue'])
-#                     print(e['venue']['fullName'])
-#                     print(e['competitors'][0]['team']['displayName'])
-#                     print(e['competitors'][1]['team']['displayName'])
-
-                # if e['id'] == 783:
-                #     print(e['name'])
-                # fecha = e['date']
-                # dia = datetime.datetime.strptime(fecha, '%Y-%m-%dT%H:%MZ').strftime('%A')
-                # fecha1 = datetime.datetime.strptime(fecha, '%Y-%m-%dT%H:%MZ').strftime("%d-%m-%Y")
+            if c['seasonType']['id'] == "5" or c['seasonType']['id'] == "6":
+                
+                for e in c['competitions']:
+                    fecha = e['date']
+                    dia = datetime.datetime.strptime(fecha, '%Y-%m-%dT%H:%MZ').strftime('%A')
+                    fecha1 = datetime.datetime.strptime(fecha, '%Y-%m-%dT%H:%MZ').strftime("%d-%m-%Y")
                     
+                    tablaProsiciones = {}
+                    tablaProsiciones['dia'] = dia
+                    tablaProsiciones['fecha'] = fecha1
                     
-                #     #for l in e['competitors']:
+                    tablaProsiciones['equipo1'] = e['competitors'][0]['team']['displayName']
+                    tablaProsiciones['equipo2'] = e['competitors'][1]['team']['displayName']
+                    tablaProsiciones['logo1'] = e['competitors'][0]['team']['logos'][0]
+                    tablaProsiciones['logo2'] = e['competitors'][1]['team']['logos'][0]
+                    tablaProsiciones['score1'] = e['competitors'][0]['score']['value']
+                    tablaProsiciones['score2'] = e['competitors'][1]['score']['value']
+                    tablaProsiciones['condicion'] = e['leg']['displayValue']
+                    tablaProsiciones['estadio'] = e['venue']['fullName']
                         
-                # tablaProsiciones = {}
-                # tablaProsiciones['dia'] = dia
-                # tablaProsiciones['fecha'] = fecha1
-                # tablaProsiciones['equipo1'] = e['competitors'][0]['team']['displayName']
-                # tablaProsiciones['equipo2'] = e['competitors'][1]['team']['displayName']
-                # tablaProsiciones['logo1'] = e['competitors'][0]['team']['logos'][0]
-                # tablaProsiciones['logo2'] = e['competitors'][1]['team']['logos'][0]
-                # tablaProsiciones['score1'] = e['competitors'][0]['score']['value']
-                # tablaProsiciones['score2'] = e['competitors'][1]['score']['value']
-                    
 
-                # resultado.append(tablaProsiciones)
-                        
-                     
+                    resultado.append(tablaProsiciones)
+                    
          
-    return resultado
-    
+        return resultado
     return ''
 
 
@@ -207,26 +193,27 @@ def tabla(params={}):
     if response:
         
         fixture = response['children']
+        print(fixture)
         i = 1
         datos = list() 
         for t in fixture:
         
             
             for s in t['standings']['entries']:
-            
+               
                 tablaProsiciones = {}
                 tablaProsiciones['puesto'] = i
                 tablaProsiciones['logo'] = s['team']['logos']
                 tablaProsiciones['name'] = s['team']['name']
-                tablaProsiciones['pj'] = s['stats'][3]
-                tablaProsiciones['g'] = s['stats'][0]
-                tablaProsiciones['e'] = s['stats'][2]
+                tablaProsiciones['pj'] = s['stats'][0]
+                tablaProsiciones['g'] = s['stats'][6]
+                tablaProsiciones['e'] = s['stats'][5]
                 tablaProsiciones['p'] = s['stats'][1]
                 tablaProsiciones['gf'] = s['stats'][4]
-                tablaProsiciones['gc'] = s['stats'][5]
-                tablaProsiciones['dif'] = s['stats'][9]
-                tablaProsiciones['pts'] = s['stats'][6]
-
+                tablaProsiciones['gc'] = s['stats'][3]
+                tablaProsiciones['dif'] = s['stats'][8]
+                tablaProsiciones['pts'] = s['stats'][2]
+                
                 datos.append(tablaProsiciones)
 
                 i +=1
@@ -237,7 +224,7 @@ def tabla(params={}):
     return ''
 
 def tablaLibertadores(params={}):
-    response = generate_request('https://site.web.api.espn.com/apis/v2/sports/soccer/conmebol.libertadores/standings?region=ar&lang=es&contentorigin=deportes&sort=rank%3Aasc', params)
+    response = generate_request('https://site.web.api.espn.com/apis/v2/sports/soccer/conmebol.libertadores/standings?region=ar&lang=es&contentorigin=deportes&season=2022&sort=rank%3Aasc', params)
                                 
     if response:
         
