@@ -13,8 +13,8 @@ def index(requests):
         'goles': goles(),
         'tarjetas': tarjetas(),
         'calendario': calendario(),
-        'tablaLibertadores': tablaLibertadores(),
-        'resultadoLib': resultadosLib()
+        # 'tablaLibertadores': tablaLibertadores(),
+        # 'resultadoLib': resultadosLib()
     }
     
     return render(requests, 'index.html', context)
