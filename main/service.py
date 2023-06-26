@@ -6,7 +6,7 @@ import datetime
 
 
 def generate_request(url, params={}):
-    response = requests.get(url, params=params, proxies = {'http': 'http://proxy.server:3128', 'https': 'https://proxy.server:3128'})
+    response = requests.get(url, params=params, proxies = {'http': 'http://proxy.server:443', 'https': 'https://proxy.server:443'})
 
     if response.status_code == 200:
         return response.json()
