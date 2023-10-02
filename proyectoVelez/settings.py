@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'p!(=f49^qnn#tws218u%fayk4)8zz^c2ulk+)uqrf9m4p))6&a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -106,7 +106,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-CSRF_TRUSTED_ORIGINS = ["https://velezsarsfield.herokuapp.com"]
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
