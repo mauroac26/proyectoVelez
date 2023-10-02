@@ -7,7 +7,7 @@ import datetime
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36'}
 
 def generate_request(url, params={}):
-    response = requests.get(url, params=params, proxies = {'http': 'http://proxy.server:443', 'https': 'https://proxy.server:443'} , headers=headers)
+    response = requests.get(url, params=params , headers=headers)
 
     if response.status_code == 200:
         return response.json()
