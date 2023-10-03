@@ -16,7 +16,7 @@ def generate_request(url, params={}):
 
 def get_username(params={}):
     
-    response = generate_request('https://site.web.api.espn.com/apis/site/v2/sports/soccer/ARG.1/teams/21/roster?region=ar&lang=es&contentorigin=deportes&limit=99&sort=jersey%3Aasc', params)
+    response = generate_request('https://site.web.api.espn.com/apis/site/v2/sports/soccer/arg.copa_lpf/teams/21/roster?region=ar&lang=es', params)
     player = {}
 
     if response:
@@ -47,15 +47,18 @@ def jugador(response, posicion):
         resultado = list()
 
         equipos = response['athletes']
-       
+        
         for n in equipos:
             
             if n['position']['displayName'] == posicion:
                 
                 tablaProsiciones = {}
+            
                 tablaProsiciones['nombre'] = n['fullName']
-
-                tablaProsiciones['dorsal'] = n['jersey']
+                valor = n.__contains__('jersey')
+                if valor:
+                    
+                    tablaProsiciones['dorsal'] = n['jersey']
 
                 # tablaProsiciones['nac'] = n['jersey']
 
@@ -189,12 +192,15 @@ def calendario(params={}):
 
   
 def tabla(params={}):
-    response = generate_request('https://site.web.api.espn.com/apis/v2/sports/soccer/ARG.1/standings?region=ar&lang=es&contentorigin=deportes&season=2023&sort=rank%3Aasc', params)
-                               
+    #COPA DE LA LIGA ARGENTINA
+    response = generate_request('https://site.web.api.espn.com/apis/v2/sports/soccer/arg.copa_lpf/standings?region=ar&lang=es&contentorigin=deportes&season=2023&sort=rank%3Aasc', params)
+    
+    #LIGA ARGENTINA
+    #response = generate_request('https://site.web.api.espn.com/apis/v2/sports/soccer/ARG.1/standings?region=ar&lang=es&contentorigin=deportes&season=2023&sort=rank%3Aasc', params)
     if response:
         
         fixture = response['children']
-        print(fixture)
+        
         i = 1
         datos = list() 
         for t in fixture:
@@ -261,7 +267,8 @@ def tablaLibertadores(params={}):
     return ''
 
 def goles(params={}):
-    response = generate_request('https://site.web.api.espn.com/apis/site/v2/sports/soccer/ARG.1/teams/21/statistics?region=ar&lang=es&contentorigin=deportes&level=1', params)
+    #PARA CAMBIAR LOS GOLEADORES DE LA LIGA DESPUES DE soccer/ARG.1 PARA LA COPA DE LA LIGA arg.copa_lpf
+    response = generate_request('https://site.web.api.espn.com/apis/site/v2/sports/soccer/arg.copa_lpf/teams/21/statistics?region=ar&lang=es&contentorigin=deportes&level=1', params)
     
     if response:
         
@@ -316,7 +323,7 @@ def goles(params={}):
 
 
 def tarjetas(params={}):
-    response = generate_request('https://site.web.api.espn.com/apis/site/v2/sports/soccer/ARG.1/teams/21/statistics?region=ar&lang=es&contentorigin=deportes&level=2', params)
+    response = generate_request('https://site.web.api.espn.com/apis/site/v2/sports/soccer/arg.copa_lpf/teams/21/statistics?region=ar&lang=es&contentorigin=deportes&level=2', params)
     
     if response:
         
