@@ -89,9 +89,7 @@ def resultados(params={}):
                     dia = datetime.datetime.strptime(fecha, '%Y-%m-%dT%H:%MZ').strftime('%A')
                     fecha1 = datetime.datetime.strptime(fecha, '%Y-%m-%dT%H:%MZ').strftime("%d-%m-%Y")
                     
-                    
-                    #for l in e['competitors']:
-                        
+                
                     tablaProsiciones = {}
                     tablaProsiciones['dia'] = dia
                     tablaProsiciones['fecha'] = fecha1
