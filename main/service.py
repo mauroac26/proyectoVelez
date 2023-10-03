@@ -239,7 +239,7 @@ def tablaLibertadores(params={}):
         for t in fixture:
         
             if t['id'] == "3":
-                #return  t['standings']['entries']
+                
                 for s in t['standings']['entries']:
             
                     tablaProsiciones = {}
