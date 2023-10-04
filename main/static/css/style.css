@@ -439,7 +439,8 @@ div#preloader {
   transition: 0.3s;
   background-color: #333;
   width: 150px;
-  height: 280px;
+  /*height: 280px;*/
+  height:max-content;
   margin-left: auto;
 }
 .navbar-mobile a, .navbar-mobile a:focus {
