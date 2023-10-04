@@ -2529,13 +2529,8 @@ span.email-notes {
 
 .contenedor{
   position: relative;
-<<<<<<< HEAD
   display: flex;
   justify-content: center;
-=======
-  display: inline-block;
-  text-align: center;
->>>>>>> 23e1162a755642b249fe9b62b61e2cc67ddb3a3b
 }
 .texto-encima{
   position: absolute;
@@ -2548,7 +2543,6 @@ span.email-notes {
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fff;
-<<<<<<< HEAD
 }
 
 .nav-pills .nav-link.active,
@@ -2558,6 +2552,7 @@ span.email-notes {
     border-bottom: 2px solid rgb(31, 7, 247);
 }
 
-=======
+
+table td {
+  font-size: 12px;
 }
->>>>>>> 23e1162a755642b249fe9b62b61e2cc67ddb3a3b
