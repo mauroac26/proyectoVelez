@@ -58,7 +58,7 @@ def jugador(response, posicion):
                     
                     tablaProsiciones['dorsal'] = n['jersey']
 
-                # tablaProsiciones['nac'] = n['jersey']
+               
 
                 tablaProsiciones['edad'] = n['age']
                 #tablaProsiciones['altura'] = n['displayHeight']
