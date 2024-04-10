@@ -439,6 +439,7 @@ div#preloader {
   transition: 0.3s;
   background-color: #333;
   width: 150px;
+  /*height: 280px;*/
   height:max-content;
   margin-left: auto;
   
@@ -2553,6 +2554,13 @@ span.email-notes {
     border-bottom: 2px solid rgb(31, 7, 247);
 }
 
+<<<<<<< HEAD
 table td {
   font-size: 12px;
 }
+=======
+
+table td {
+  font-size: 12px;
+}
+>>>>>>> de4c384b315c68eea6df2fd176e0ff1b3db2dca4
