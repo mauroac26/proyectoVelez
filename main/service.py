@@ -82,12 +82,14 @@ def resultados(params={}):
         fixture = response['events']
         
         for c in fixture:
-            if c['id'] != '625787':
+            if c['id'] != '693428':
                 for e in c['competitions']:
                     fecha = e['date']
                     dia = datetime.datetime.strptime(fecha, '%Y-%m-%dT%H:%MZ').strftime('%A')
                     fecha1 = datetime.datetime.strptime(fecha, '%Y-%m-%dT%H:%MZ').strftime("%d-%m-%Y")
                     
+                    print(e['competitors'][0]['team']['displayName'])
+                    print(e['competitors'][1]['team']['logos'][1])
                 
                     tablaProsiciones = {}
                     tablaProsiciones['dia'] = dia
@@ -242,7 +244,7 @@ def tablaLibertadores(params={}):
             
                     tablaProsiciones = {}
                     tablaProsiciones['puesto'] = i
-                    tablaProsiciones['logo'] = s['team']['logos']
+                    #tablaProsiciones['logo'] = s['team']['logos']
                     tablaProsiciones['name'] = s['team']['name']
                     tablaProsiciones['pj'] = s['stats'][3]
                     tablaProsiciones['g'] = s['stats'][0]
