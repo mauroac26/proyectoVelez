@@ -190,10 +190,10 @@ def calendario(params={}):
   
 def tabla(params={}):
     #COPA DE LA LIGA ARGENTINA
-    response = generate_request('https://site.web.api.espn.com/apis/v2/sports/soccer/arg.copa_lpf/standings?region=ar&lang=es&contentorigin=deportes&season=2024&sort=rank%3Aasc', params)
-    print(response)
+    #response = generate_request('https://site.web.api.espn.com/apis/v2/sports/soccer/arg.copa_lpf/standings?region=ar&lang=es&contentorigin=deportes&season=2024&sort=rank%3Aasc', params)
+    
     #LIGA ARGENTINA
-    #response = generate_request('https://site.web.api.espn.com/apis/v2/sports/soccer/ARG.1/standings?region=ar&lang=es&contentorigin=deportes&season=2023&sort=rank%3Aasc', params)
+    response = generate_request('https://site.web.api.espn.com/apis/v2/sports/soccer/ARG.1/standings?region=ar&lang=es&contentorigin=deportes&season=2024&sort=rank%3Aasc', params)
     if response:
         
         fixture = response['children']
@@ -266,7 +266,7 @@ def tablaLibertadores(params={}):
 
 def goles(params={}):
     #PARA CAMBIAR LOS GOLEADORES DE LA LIGA DESPUES DE soccer/ARG.1 PARA LA COPA DE LA LIGA arg.copa_lpf
-    response = generate_request('https://site.web.api.espn.com/apis/site/v2/sports/soccer/arg.copa_lpf/teams/21/statistics?region=ar&lang=es&contentorigin=deportes&level=1', params)
+    response = generate_request('https://site.web.api.espn.com/apis/site/v2/sports/soccer/ARG.1/teams/21/statistics?region=ar&lang=es&contentorigin=deportes&level=1', params)
     
     if response:
         
@@ -321,7 +321,7 @@ def goles(params={}):
 
 
 def tarjetas(params={}):
-    response = generate_request('https://site.web.api.espn.com/apis/site/v2/sports/soccer/arg.copa_lpf/teams/21/statistics?region=ar&lang=es&contentorigin=deportes&level=2', params)
+    response = generate_request('https://site.web.api.espn.com/apis/site/v2/sports/soccer/ARG.1/teams/21/statistics?region=ar&lang=es&contentorigin=deportes&level=2', params)
     
     if response:
         
@@ -348,3 +348,34 @@ def tarjetas(params={}):
          
         
     return ''
+
+
+# def playoff(params={}):
+#     #COPA DE LA LIGA ARGENTINA
+#     response = generate_request('https://site.web.api.espn.com/apis/v2/sports/soccer/arg.copa_lpf/standings?region=ar&lang=es&contentorigin=deportes&season=2024&sort=rank%3Aasc', params)
+    
+#     if response:
+        
+#         fixture = response['children']
+#         print(fixture)
+#         i = 1
+#         datos = list() 
+#         for t in fixture:
+        
+            
+#             for s in t['standings']['entries'][:4]:
+               
+#                 tablaProsiciones = {}
+#                 tablaProsiciones['puesto'] = i
+#                 tablaProsiciones['logo'] = s['team']['logos']
+#                 tablaProsiciones['name'] = s['team']['name']
+                
+                
+#                 datos.append(tablaProsiciones)
+
+#                 i +=1
+
+                    
+#             return datos
+    
+#     return ''
